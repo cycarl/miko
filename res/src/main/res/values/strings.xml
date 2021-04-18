@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_times">9999</string>
+    <string name="data_dura">22:22</string>
+    <string name="label_episode">第%s话</string>
+    <string name="label_space" />
+</resources>

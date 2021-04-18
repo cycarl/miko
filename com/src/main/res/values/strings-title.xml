@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">消息</string>
+    <string name="title_group">群聊</string>
+    <string name="title_contact">好友</string>
+
+    <string name="title_search">搜索</string>
+    <string name="title_search_user">搜索用户</string>
+    <string name="title_search_group">搜索群</string>
+
+    <string name="title_select_gallery">选择照片</string>
+    <string name="title_assist_permissions">授权</string>
+
+    <string name="title_member_list">群成员</string>
+    <string name="title_member_add">添加新成员</string>
+</resources>

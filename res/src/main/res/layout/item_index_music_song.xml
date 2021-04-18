@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.xana.acg.com.widget.SquareImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_ireina"
+            android:scaleType="centerCrop"
+            app:radius="@dimen/len_6"
+            android:foreground="@drawable/ic_touch_fg"
+            android:clickable="true"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:padding="@dimen/len_6">
+
+            <com.xana.acg.com.widget.RoundImageView
+                app:radius="@dimen/len_10"
+                android:layout_width="@dimen/len_12"
+                android:layout_height="@dimen/len_12"
+
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_play_1" />
+
+            <TextView
+                android:id="@+id/tv_plays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/data_times"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_10" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dis_of_text_img"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_10"
+        android:ellipsize="end"
+        android:text="@string/label_tips"
+        android:maxLines="2"/>
+
+</LinearLayout>

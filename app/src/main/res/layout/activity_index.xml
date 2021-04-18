@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndexActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarWithStatusBarSize"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/len_20"
+            android:paddingTop="@dimen/statusBarSize"
+            android:paddingEnd="@dimen/len_20">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="@string/app_name" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/len_20"
+                android:layout_marginEnd="@dimen/len_20"
+                app:tabIndicatorHeight="@dimen/len_0"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/TL0"
+                app:tabTextColor="@color/grey_500" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/ic_search"
+                android:tint="@color/colorIcon"
+                android:contentDescription="@string/app_name" />
+
+        </LinearLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+
+            android:id="@+id/vp2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <!--    android:layout_gravity="start"-->
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_roku" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

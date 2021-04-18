@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="label_galgame_title">美少女万华镜</string>
+    <string name="label_game_shot">游戏截图</string>
+    <string name="label_game_share">资源分享</string>
+    <string name="label_getCode">提取密码</string>
+    <string name="label_unzip">解压密码</string>
+    <string name="label_unzip_pass">3344</string>
+    <string name="label_game_des">游戏简介</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_day_recom">今日推荐</string>
+    <string name="label_song_list">歌单</string>
+    <string name="label_rank">排行榜</string>
+    <string name="label_channel">电台</string>
+    <string name="label_live">直播</string>
+    <string name="label_song_recom">推荐歌曲</string>
+    <string name="label_more">更多</string>
+    <string name="label_song_new">新歌</string>
+    <string name="label_elite">精选</string>
+    <string name="label_get_new">获取新内容</string>
+</resources>

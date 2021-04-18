@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/len_6"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/len_10">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.xana.acg.com.widget.RoundImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/ic_touch_fg"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_ireina"
+            app:radius="@dimen/len_8" />
+
+
+        <!--        <FrameLayout-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="end|bottom"-->
+        <!--            android:padding="@dimen/len_6">-->
+
+        <!--            <ImageView-->
+        <!--                android:layout_width="@dimen/len_12"-->
+        <!--                android:layout_height="@dimen/len_12"-->
+
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:contentDescription="@string/app_name"-->
+        <!--                android:src="@drawable/ic_dura" />-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:layout_marginStart="@dimen/len_14"-->
+        <!--                android:text="@string/data_play_dura"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="@dimen/font_10" />-->
+        <!--        </FrameLayout>-->
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingTop="@dimen/len_10"
+        android:paddingBottom="@dimen/len_10"
+        android:text="@string/label_tips"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_200" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/len_10">
+
+        <com.xana.acg.com.widget.PortraitView
+            android:id="@+id/pv_up_avater"
+            android:layout_width="@dimen/len_28"
+            android:layout_height="@dimen/len_28"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_my" />
+
+        <TextView
+            android:id="@+id/tv_up_name"
+            android:layout_width="@dimen/len_128"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/len_32"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/label_nickname"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/len_100">
+
+            <ImageView
+                android:id="@+id/iv_ic_thumb"
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_thumb_no" />
+
+            <TextView
+                android:id="@+id/tv_thumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_ic_thumb"
+                android:layout_toEndOf="@id/iv_ic_thumb"
+                android:text="@string/data_times"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_8" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/len_44">
+
+            <ImageView
+                android:id="@+id/iv_ic_comment"
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_comment" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_ic_comment"
+                android:layout_toEndOf="@id/iv_ic_comment"
+                android:text="@string/data_times"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_8" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/tv_more"
+            android:layout_width="@dimen/len_28"
+            android:layout_height="@dimen/len_28"
+            android:layout_gravity="center_vertical|end"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/ic_touch_fg"
+            android:padding="@dimen/len_4"
+            android:src="@drawable/ic_more" />
+    </FrameLayout>
+</LinearLayout>

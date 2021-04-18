@@ -1,0 +1,6 @@
+include ':vitamio'
+include ':res'
+include ':fac'
+include ':com'
+include ':app'
+rootProject.name = "mikomiko"

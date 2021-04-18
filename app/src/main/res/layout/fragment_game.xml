@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".frags.GameFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.xana.acg.com.widget.recycler.Recycler
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.xana.acg.com.widget.RoundImageView
+            android:id="@+id/iv_trigger"
+            app:radius="@dimen/len_20"
+            android:layout_width="@dimen/len_40"
+            android:layout_height="@dimen/len_40"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="@dimen/len_20"
+            android:layout_marginBottom="@dimen/len_20"
+            android:foreground="@drawable/ic_touch_fg"
+            android:src="@drawable/ic_my" />
+    </FrameLayout>
+
+
+</FrameLayout>

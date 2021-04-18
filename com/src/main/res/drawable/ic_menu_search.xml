@@ -1,0 +1,6 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_search"
+    android:insetBottom="@dimen/len_6"
+    android:insetLeft="@dimen/len_6"
+    android:insetRight="@dimen/len_6"
+    android:insetTop="@dimen/len_6" />

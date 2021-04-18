@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--基础色-->
+    <color name="colorPrimary">#31373d</color>
+    <color name="colorPrimaryDark">#31373d</color>
+    <color name="colorAccent">#1572fc</color>
+    <color name="colorLight">@color/white</color>
+    <color name="colorDark">@color/black</color>
+    <color name="colorAccentAlpha">#801572fc</color>
+
+    <!--背景色-->
+    <color name="windowsBackground">#f7f7f7</color>
+    <color name="windowsBackgroundLight">#f8f8f8</color>
+    <!--字体色-->
+    <color name="textPrimary">#4e5864</color>
+    <color name="textSecond">#8d9ca9</color>
+    <color name="textAccent">@color/colorAccent</color>
+    <color name="textLight">@color/colorLight</color>
+    <color name="textDark">#202020</color>
+    <!--提示色-->
+    <color name="alertNormal">#4ce275</color>
+    <color name="alertImportant">#f98d2c</color>
+    <!--遮罩色-->
+    <color name="maskChatHeader">@color/black_alpha_48</color>
+    <!--导航栏遮罩色-->
+    <color name="navIconTintLight">@color/grey_700</color>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".actis.AnimePlayerActivity">
+    <RelativeLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarWithStatusBarSize"
+            android:paddingTop="@dimen/statusBarSize"
+            android:translationZ="@dimen/len_10"
+            app:title=" "/>
+
+        <io.vov.vitamio.widget.CenterLayout
+            android:id="@+id/dd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_224"
+            android:background="@color/colorAccent"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:orientation="vertical">
+
+            <io.vov.vitamio.widget.VideoView
+                android:id="@+id/vitamio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </io.vov.vitamio.widget.CenterLayout>
+
+        <TextView
+            android:id="@+id/buffer_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/dd"
+            android:layout_marginStart="12dp"
+            android:textColor="#e6ff01" />
+
+        <TextView
+            android:id="@+id/net_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/dd"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/buffer_percent"
+            android:textColor="#04fa00" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_40"
+        android:layout_marginEnd="@dimen/len_224"
+        app:tabGravity="center"
+        app:tabIndicator="@null"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextColor="@color/black_alpha_112" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

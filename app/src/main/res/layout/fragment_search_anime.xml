@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".frags.search.SearchAnimeFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <net.qiujuer.genius.ui.widget.Loading
+            android:id="@+id/loading"
+            android:layout_width="@dimen/len_32"
+            android:layout_height="@dimen/len_32"
+            android:layout_gravity="center"
+            android:translationZ="@dimen/len_10"
+            app:gForegroundColor="@color/colorAccent"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_left"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_right"
+                android:layout_width="@dimen/len_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+
+
+</androidx.core.widget.NestedScrollView>
+

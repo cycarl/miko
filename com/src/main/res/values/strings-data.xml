@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="data_invalid_smart">手机号格式不正确!</string>
+
+    <string name="data_invalid_account">账号不存在!</string>
+
+    <string name="data_used_smart">该手机号已注册!</string>
+
+    <string name="data_invalid_pass">密码格式不正确!</string>
+
+    <string name="data_invalid_nick">昵称应不少于2个字符!</string>
+
+    <string name="data_invalid_captcha">验证码不正确!</string>
+
+    <string name="data_fail_captcha">验证码发送失败!</string>
+
+
+    <string name="data_tip_captcha">验证码已发送!</string>
+
+    <string name="data_login_success">登录成功!</string>
+    <string name="data_register_success">注册成功!</string>
+
+    <string name="data_network_error">网络异常！</string>
+
+
+    <string name="data_upload_error">上传失败！</string>
+    <string name="image_upload_error">图片上传失败了?!</string>
+
+    <string name="data_rsp_error_unknown">未知错误(ρ_・).。</string>
+    <string name="data_rsp_error_service">服务器错误(ρ_・).。</string>
+    <string name="data_rsp_error_not_found_user">未找到用户! →_→</string>
+    <string name="data_rsp_error_not_found_group">未找到群! →_→</string>
+    <string name="data_rsp_error_not_found_group_member">未找到群成员! →_→</string>
+    <string name="data_rsp_error_create_user">添加用户失败!</string>
+    <string name="data_rsp_error_create_group">添加群失败!</string>
+    <string name="data_rsp_error_create_message">添加消息失败!</string>
+    <string name="data_rsp_error_parameters">抱歉，参数错误哦! O_o</string>
+    <string name="data_rsp_error_parameters_exist_account">已有该账户! ★~★</string>
+    <string name="data_rsp_error_parameters_exist_name">已有该用户名! ★~★</string>
+    <string name="data_rsp_error_account_token">重新登录 ..@_@|||||..</string>
+    <string name="data_rsp_error_account_login">登录失败，是那里没搞定么? §^_^§</string>
+    <string name="data_rsp_error_account_register">抱歉，注册失败!  ^_^|||</string>
+    <string name="data_rsp_error_account_no_permission">您越权啦!!!</string>
+
+</resources>

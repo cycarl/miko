@@ -1,16 +1,16 @@
 # mikomiko 一款动漫、音乐、美图、galgame于一体的二次元app。
 
-##介绍
+## 介绍
 mikomiko是一款二次元手机app，里面集成了网易云api可以在线听歌。使用scrapy增量式爬虫并整合SpringBoot的完成了的动漫区、美图区、galgame区的api，并应用在app中。
 实现了在线看番，壁纸欣赏、galgame分享的功能。ps：点击美图区的浮动按钮会触发隐藏美图，"绅士"们不要错过哦。
 
 ## 软件架构
-1、app模块定义各种Activity和Fragment以及相应布局文件, 使用了ButterKnife进行控件绑定。</br>
+1、app模块定义各种Activity和Fragment以及相应布局文件, 使用了ButterKnife进行控件绑定。
 2、com模块定义项目中公用的部分，例如网络请求API、常量，自定义封装RecyclerView, Adapter, 定义实现图片圆角控件RoundImageView, 
-    自定义数据回调接口DataSource.Callback<T> 以及MVP模式基本契约接口。基本Presenter抽象类等。</br>
-3、fac模块定义数据Model，封装网络请求工具类，定义Retrofit2代理接口RemoteService,以及各种Presenter的实现类。</br>
-4、res模块定义各种item布局文件，各种drawable、string、color、dimen资源。是项目主要的资源模块。</br>
-5、vitamio模块是第三方在线视频播放模块。里面封装了m3u8索引文件的解析器，可以直接播放m3u8包含的流媒体。</br>
+    自定义数据回调接口DataSource.Callback<T> 以及MVP模式基本契约接口。基本Presenter抽象类等。<br/>
+3、fac模块定义数据Model，封装网络请求工具类，定义Retrofit2代理接口RemoteService,以及各种Presenter的实现类。<br/>
+4、res模块定义各种item布局文件，各种drawable、string、color、dimen资源。是项目主要的资源模块。<br/>
+5、vitamio模块是第三方在线视频播放模块。里面封装了m3u8索引文件的解析器，可以直接播放m3u8包含的流媒体。<br/>
 
 ## 功能截图
 ### 主页
@@ -62,7 +62,6 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 
 ### 游戏分享 (美少女万華鏡　理と迷宮の少女)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-21-23-47-468_com.xana.acg.m.jpg)
-
 
 ## 参与贡献
 1.  Fork 本仓库

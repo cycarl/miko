@@ -28,7 +28,7 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-34-673_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-51-161_com.xana.acg.m.jpg)
 
-### 动漫播放 （darling in the franxx）
+### 动漫播放 (darling in the franxx）
 
 「比翼の鳥」というらしい<br/>
 その鳥は片方の翼しかも立つ、雄と雌、つわいで寄り添わらければ、空を飛べない。不完全の生き物。<br/>

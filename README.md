@@ -51,7 +51,7 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-17-57-463_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-18-40-904_com.xana.acg.m.jpg)
 
-## 音乐播放 (Re:ゼロから異世界生活)
+## 音乐播放 (Re:ゼロから始める異世界生活　Memento)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-21-25-26-833_com.xana.acg.m.jpg)
 
 ## 游戏分享 (美少女万華鏡　理と迷宮の少女)

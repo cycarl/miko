@@ -23,7 +23,8 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-34-673_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-51-161_com.xana.acg.m.jpg)
 
-### 动漫播放 （darling in the franxx)
+### 动漫播放 （darling in the franxx）
+
 「比翼の鳥」というらしい<br/>
 その鳥は片方の翼しかも立つ、雄と雌、つわいで寄り添わらければ、空を飛べない。不完全の生き物。<br/>
 でも、なぜだろう、わたしはその命のやり方を美しいと思ってしまったのだ。<br/>
@@ -36,16 +37,16 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-12-40-659_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-13-20-535_com.xana.acg.m.jpg)
 
-####やっぱりボクと同じようだ、キミとボクを似ていてね。
-####人間の涙を久しぶり見た、その目を気に入ったよ、ドキドキする。
-####さぁおいで、キミを味あわせて、今からキミがボクのダーリンだ。
+やっぱりボクと同じようだ、キミとボクを似ていてね。<br/>
+人間の涙を久しぶり見た、その目を気に入ったよ、ドキドキする。<br/>
+さぁおいで、キミを味あわせて、今からキミがボクのダーリンだ。<br/>
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-02-249_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-36-861_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-43-738_com.xana.acg.m.jpg)
 
-####なぜだ、涙が出た。傷の痛みのせいじゃない。
-####そうだ、わたしはたぶん嬉しかったのだ、絵本の中の世界みたいな、綺麗なものに
-####きっとこの人とならなれるんだと。
+なぜだが、涙が出た。傷の痛みのせいじゃない。<br/>
+そうだ、わたしはたぶん嬉しかったのだ、絵本の中の世界みたいな、綺麗なものに<br/>
+きっとこの人とならなれるんだと。<br/>
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-16-49-016_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-17-34-810_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-17-57-463_com.xana.acg.m.jpg)

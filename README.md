@@ -5,7 +5,7 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 实现了在线看番，壁纸欣赏、galgame分享的功能。ps：点击美图区的浮动按钮会触发隐藏美图，"绅士"们不要错过哦。
 
 ## 软件架构
-1、app模块定义各种Activity和Fragment以及相应布局文件, 使用了ButterKnife进行控件绑定。
+1、app模块定义各种Activity和Fragment以及相应布局文件, 使用了ButterKnife进行控件绑定。<br/>
 2、com模块定义项目中公用的部分，例如网络请求API、常量，自定义封装RecyclerView, Adapter, 定义实现图片圆角控件RoundImageView, 
     自定义数据回调接口DataSource.Callback<T> 以及MVP模式基本契约接口。基本Presenter抽象类等。<br/>
 3、fac模块定义数据Model，封装网络请求工具类，定义Retrofit2代理接口RemoteService,以及各种Presenter的实现类。<br/>

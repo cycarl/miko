@@ -6,7 +6,6 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ## 软件架构
 使用AS 4.0开发。
 
-
 ## 功能截图
 ### 主页
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/5a6520b5937ee8542b1bded6bdea8754529c692d.jpg)

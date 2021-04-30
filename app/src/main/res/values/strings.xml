@@ -19,4 +19,16 @@
     <string name="label_song_new">新歌</string>
     <string name="label_elite">精选</string>
     <string name="label_get_new">获取新内容</string>
+    <string name="copyright">MikoMiko 2020-2021</string>
+    <string name="label_enjoy_now">立即体验</string>
+    <string name="label_smart_input_tip">未注册手机号登录后将自动创建账号</string>
+    <string name="label_smart_hint">请输入手机号码</string>
+    <string name="smart_code">+86</string>
+    <string name="label_smart">+86 %s</string>
+    <string name="label_next">下一步</string>
+    <string name="label_login">登录</string>
+    <string name="label_pass_hint">请输入密码</string>
+    <string name="label_change_pass_hint">设置登录密码，不少于6位</string>
+    <string name="label_reverse_second">%ds</string>
+    <string name="label_captcha_send_tip">验证码已发送至</string>
 </resources>

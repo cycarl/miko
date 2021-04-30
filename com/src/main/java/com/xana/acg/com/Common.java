@@ -38,7 +38,7 @@ public interface Common {
 
     interface REGEX{
         String SMART = "^1[34578][0-9]{9}$";
-        String PASS = "^.{4,32}$";
+        String PASS = "^.{6,32}$";
         String NICK = "^.{2,10}$";
     }
     interface ACCOUNT{

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="data_invalid_smart">手机号格式不正确!</string>
+    <string name="data_invalid_smart">请输入正确的手机号</string>
 
     <string name="data_invalid_account">账号不存在!</string>
 
     <string name="data_used_smart">该手机号已注册!</string>
 
-    <string name="data_invalid_pass">密码格式不正确!</string>
+    <string name="data_invalid_pass">密码应不少于6位</string>
 
-    <string name="data_invalid_nick">昵称应不少于2个字符!</string>
+    <string name="data_invalid_nick">昵称应不少于2位,且不含空格</string>
 
     <string name="data_invalid_captcha">验证码不正确!</string>
 

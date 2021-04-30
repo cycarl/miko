@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="iwangzhe.customview2.MainActivity">
+
+    <iwangzhe.customview2.TestView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <iwangzhe.customview2.phonecode.FocusPhoneCode
+        android:id="@+id/fpc_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"/>
+
+    <iwangzhe.customview2.phonecode.PhoneCode
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pc_1"
+        android:layout_below="@+id/fpc_1"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+</RelativeLayout>

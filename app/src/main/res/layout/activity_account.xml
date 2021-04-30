@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".actis.AccountActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/statusBarSize"
+        app:title="@string/label_smart_login"
+        app:titleTextColor="@color/black"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_marginTop="@dimen/len_100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

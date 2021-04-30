@@ -1,6 +1,9 @@
 package com.xana.acg.fac.net;
 
+import com.google.gson.JsonObject;
 import com.xana.acg.fac.model.Game;
+import com.xana.acg.fac.model.account.MusicUser;
+import com.xana.acg.fac.model.account.RegisterStatus;
 import com.xana.acg.fac.model.anime.Anime;
 import com.xana.acg.fac.model.anime.Detail;
 import com.xana.acg.fac.model.api.PageResult;
@@ -56,4 +59,16 @@ public interface RemoteService {
 
     @GET("{uri}")
     Call<Detail> getAnimeDetail(@Path("uri") String uri);
+
+    @GET("/cellphone/existence/check")
+    Call<RegisterStatus> checkExist(@Query("phone") String smart);
+
+    @GET("/login/cellphone")
+    Call<MusicUser> login(@Query("phone") String smart, @Query("password") String pass);
+
+    @GET("/captcha/sent")
+    Call<RespModel> sendCaptcha(@Query("phone") String smart);
+
+    @GET("/captcha/verify")
+    Call<RespModel> verifyCaptcha(@Query("phone") String smart, @Query("captcha") String captcha);
 }

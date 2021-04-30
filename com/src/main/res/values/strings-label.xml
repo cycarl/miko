@@ -21,7 +21,7 @@
 
     <string name="label_login_welcome">登录</string>
     <string name="label_submit">提交</string>
-    <string name="label_login">登录</string>
+    <string name="label_smart_login">手机号登录</string>
     <string name="label_phone">手机号</string>
     <string name="label_register_welcome">欢迎您!</string>
     <string name="label_register">注册</string>

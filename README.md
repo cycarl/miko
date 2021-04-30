@@ -69,3 +69,6 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 3.  提交代码
 4.  新建 Pull Request
 
+## 致谢
+
+

@@ -51,7 +51,7 @@ public abstract class PresenterActivity<T extends BaseContract.Presenter>
 
     @Override
     public void showError(String msg) {
-
+        Application.showToast(msg);
     }
 
     @Override

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LaunchActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal|bottom"
+        android:translationZ="@dimen/len_10">
+        <net.qiujuer.genius.ui.widget.Loading
+            android:layout_width="@dimen/len_32"
+            android:layout_height="@dimen/len_32"
+            android:layout_gravity="center_horizontal"
+            app:gForegroundColor="@color/colorAccent"
+            app:gBackgroundColor="@null"
+            android:layout_marginBottom="@dimen/len_10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/copyright"
+            android:textColor="@color/black_alpha_80"
+            android:textSize="@dimen/len_16"
+            android:layout_marginBottom="@dimen/len_40"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pixiv_004"
+        android:scaleType="centerCrop"
+        />
+
+</FrameLayout>

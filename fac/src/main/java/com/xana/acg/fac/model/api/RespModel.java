@@ -18,6 +18,7 @@ public class RespModel<T> {
     private boolean hasmore;
     private T datas;
     private String msg;
+    private String message;
 
     private int rcmdLimit;
 
@@ -60,6 +61,9 @@ public class RespModel<T> {
 
     public String getMsg() {
         return msg;
+    }
+    public String getMessage(){
+        return message;
     }
 
     public boolean success(){

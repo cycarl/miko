@@ -3,7 +3,7 @@
     package="com.xana.acg.mikomiko">
     <!-- 网络相关权限 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 存储读写权限 -->
@@ -20,17 +20,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".actis.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar.Fade"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+        <activity
+            android:name=".LaunchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity android:name=".actis.AnimePlayerActivity"
+        <activity
+            android:name=".actis.AnimePlayerActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade"/>
+            android:theme="@style/AppTheme.TransStatusBar.Fade" />
         <activity
             android:name=".actis.MusicPlayerActivity"
             android:screenOrientation="portrait"
@@ -46,13 +62,7 @@
         <activity
             android:name=".IndexActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.TransStatusBar" />
     </application>
 
 </manifest>

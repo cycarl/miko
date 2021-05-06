@@ -2,4 +2,7 @@
     package="com.xana.acg.com">
 
     /
+    <application>
+        <activity android:name=".app.TabViewPagerActivity" />
+    </application>
 </manifest>

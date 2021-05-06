@@ -4,22 +4,20 @@ import com.xana.acg.com.data.DataSource;
 import com.xana.acg.com.presenter.BasePresenter;
 import com.xana.acg.fac.helper.ImageHelper;
 
-
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
 
 import java.util.List;
 
 public class ImagePresenter extends BasePresenter<ImageContract.View>
-    implements ImageContract.Presenter, DataSource.SucceedCallback<List<String>> {
+    implements ImageContract.Presenter, DataSource.Callback<List<String>> {
 
     public ImagePresenter(ImageContract.View view) {
         super(view);
     }
 
     @Override
-    public void onDataLoaded(List<String> data) {
-
+    public void success(List<String> data) {
         ImageContract.View view = getView();
         if(view!=null){
             Run.onUiAsync(new Action() {
@@ -34,8 +32,16 @@ public class ImagePresenter extends BasePresenter<ImageContract.View>
     private boolean isH;
 
     @Override
-    public void get(int start, int size, boolean isH) {
+    public void getImages(int start, int size, boolean isH) {
+        start();
         this.isH = isH;
         ImageHelper.get(start, size, isH, this);
+    }
+
+    @Override
+    public void fail(String strRes) {
+        ImageContract.View view = getView();
+        if(view==null) return;
+        view.showMsg(strRes);
     }
 }

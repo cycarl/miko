@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ns_page"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/len_20"
+            android:paddingEnd="@dimen/len_20"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10">
+
+            <ImageView
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_28"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_music"
+                android:padding="1dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/label_local_music" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/len_20"
+            android:paddingEnd="@dimen/len_20"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10">
+
+            <ImageView
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_28"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_play_1"
+                android:tint="@color/black"
+                android:padding="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/label_local_video" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/len_20"
+            android:paddingEnd="@dimen/len_20"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10">
+
+            <ImageView
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_28"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_drawer_timer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/label_near_play" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/download_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/len_20"
+            android:paddingEnd="@dimen/len_20"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10">
+
+            <ImageView
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_28"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_download"
+                android:tint="@color/black"
+                android:padding="@dimen/len_2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/label_download_manager" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/len_20"
+            android:paddingEnd="@dimen/len_20"
+            android:paddingTop="@dimen/len_10"
+            android:paddingBottom="@dimen/len_10">
+
+            <ImageView
+                android:layout_width="@dimen/len_28"
+                android:layout_height="@dimen/len_28"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_frag_recom"
+                android:tint="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/label_my_favor" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_10"
+            android:background="@color/grey_200"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/len_14"
+            android:paddingEnd="@dimen/len_7"
+            android:paddingTop="@dimen/len_7"
+            android:paddingBottom="@dimen/len_7">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的歌单" />
+
+            <ImageView
+                android:layout_width="@dimen/len_24"
+                android:layout_height="@dimen/len_24"
+                android:src="@drawable/ic_more"
+                android:tint="@color/black"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
+
+        <com.xana.acg.com.widget.recycler.Recycler
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/len_8"
+        tools:context=".frags.AnimeFragment" />
+    <ImageView
+        android:id="@+id/iv_trigger"
+        android:layout_width="@dimen/len_44"
+        android:layout_height="@dimen/len_44"
+        android:layout_gravity="end|bottom"
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/len_24"
+        android:src="@drawable/ic_iptv"
+        android:contentDescription="@string/app_name" />
+</FrameLayout>
+

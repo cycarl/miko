@@ -2,8 +2,11 @@ package com.xana.acg;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.raizlabs.android.dbflow.config.FlowConfig;
+import com.raizlabs.android.dbflow.config.FlowManager;
 import com.xana.acg.com.app.Application;
-import com.xana.acg.fac.utils.DBFlowExclusionStrategy;
+import com.xana.acg.fac.db.DBFlowExclusionStrategy;
+import com.xana.acg.fac.priavte.Account;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -27,14 +30,6 @@ public class Factory {
                 .create();
     }
 
-    /**
-     * 返回全局Application
-     * @return
-     */
-    public static Application app() {
-        return Application.getInstance();
-
-    }
 
     public static void runOnAsync(Runnable runnable) {
         // 异步执行
@@ -54,4 +49,16 @@ public class Factory {
 
     }
 
+    public static Application app(){
+        return Application.getInstance();
+    }
+
+    public static void setup(){
+        /* 初始化数据库 */
+        FlowManager.init(new FlowConfig.Builder(app())
+                .openDatabasesOnInit(true)
+                .build());
+        /* 持久化数据 */
+        Account.load(app());
+    }
 }

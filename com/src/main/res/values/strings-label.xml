@@ -53,4 +53,31 @@
     <string name="toast_audio_record_time_short_error">录音时间太短!</string>
 
     <string name="toast_download_error">下载失败!</string>
+
+
+    <string name="label_drawer_message">我的消息</string>
+    <string name="label_drawer_firend">我的好友</string>
+    <string name="label_drawer_msg">我的消息</string>
+    <string name="label_drawer_skin">个性换肤</string>
+    <string name="label_drawer_music">听歌识曲</string>
+    <string name="label_drawer_night_mode">夜间模式</string>
+    <string name="label_drawer_setting">设置</string>
+    <string name="label_drawer_exit">退出</string>
+    <string name="label_drawer_show">演出</string>
+    <string name="label_drawer_shopping">商城</string>
+    <string name="label_drawer_near">附近的人</string>
+    <string name="label_drawer_order">我的订单</string>
+    <string name="label_drawer_timer">定时停止播放</string>
+    <string name="label_drawer_scan">扫一扫</string>
+    <string name="label_drawer_clock">音乐闹钟</string>
+    <string name="label_drawer_cloud">音乐云盘</string>
+    <string name="label_drawer_game">游戏推荐</string>
+    <string name="label_drawer_live">我要直播</string>
+    <string name="label_drawer_about">关于miko</string>
+
+
+    <string name="data_version">当前版本 v1.0.2-beta</string>
+    <string name="data_to_thank_1">zaxtyson\n整合第三方网站的视频和弹幕资源, 为白嫖党提供最佳看番追剧体验\nhttps://gitee.com/zaxtyson/AnimeSearcher</string>
+    <string name="data_to_thank_0">binaryify\n网易云音乐 Node.js API service\nhttps://github.com/Binaryify/NeteaseCloudMusicApi</string>
+    <string name="label_to_thank">致谢:</string>
 </resources>

@@ -16,18 +16,8 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
 
     @Override
     public void start() {
-        if(mView!=null){
-            mView.showLoading();
-        }
+        mView.loading();
     }
-
-    @Override
-    public void ok(){
-        if(mView!=null){
-            mView.hideLoading();
-        }
-    }
-
     @Override
     public void destroy() {
         if(mView!=null){
@@ -35,5 +25,4 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
         }
         mView = null;
     }
-
 }

@@ -17,35 +17,7 @@ public class Musicer {
     private String avatarUrl;
     private String signature;
     private String nickname;
-    private int userId;
-
-    public void setBirthday(long birthday) {
-        this.birthday = birthday;
-    }
-
-    public void setBackgroundUrl(String backgroundUrl) {
-        this.backgroundUrl = backgroundUrl;
-    }
-
-    public void setGender(int gender) {
-        this.gender = gender;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    public void setSignature(String signature) {
-        this.signature = signature;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+    private String userId;
 
     public long getBirthday() {
         return birthday;
@@ -71,7 +43,7 @@ public class Musicer {
         return nickname;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 

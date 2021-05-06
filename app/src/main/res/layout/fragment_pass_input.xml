@@ -27,16 +27,19 @@
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="@dimen/font_16"
-            android:autofillHints="" />
+            android:textCursorDrawable="@drawable/ic_cursor"
+            android:maxLines="1"
+            android:maxLength="28"/>
 
         <TextView
             android:id="@+id/tv_change_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:textSize="@dimen/font_12"
+            android:textSize="@dimen/font_14"
+            android:gravity="center_vertical|end"
             android:textColor="@color/blue_200"
-            android:text="忘记密码？"/>
+            android:text="@string/label_pass_reset"/>
     </FrameLayout>
 
     <net.qiujuer.genius.ui.widget.Button

@@ -6,10 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:foreground="@drawable/ic_touch_fg"
     android:orientation="horizontal"
-    android:paddingStart="@dimen/len_10"
-    android:paddingEnd="@dimen/len_10"
-    android:paddingBottom="@dimen/len_4"
-    android:paddingTop="@dimen/len_4"
+    android:paddingStart="@dimen/len_14"
+    android:paddingEnd="@dimen/len_7"
+    android:paddingBottom="@dimen/len_6"
+    android:paddingTop="@dimen/len_6"
     android:gravity="center_vertical">
 
     <com.xana.acg.com.widget.RoundImageView
@@ -17,8 +17,8 @@
         android:layout_width="@dimen/len_60"
         android:layout_height="@dimen/len_60"
         app:radius="@dimen/len_6"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_ireina"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_loading"
         android:layout_marginEnd="@dimen/len_10"/>
 
     <LinearLayout
@@ -63,7 +63,7 @@
             android:text="@string/label_nickname"
 
             android:textColor="@color/grey_500"
-            android:textSize="@dimen/font_10" />
+            android:textSize="@dimen/font_12" />
 
         <TextView
             android:id="@+id/tv_tip"
@@ -72,33 +72,34 @@
             android:layout_marginTop="@dimen/len_2"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/label_nickname"
             android:textColor="@color/grey_500"
-            android:textSize="@dimen/font_12" />
+            android:textSize="@dimen/font_13" />
     </LinearLayout>
 
 
-    <FrameLayout
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="@dimen/len_60"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageView
-            android:layout_width="@dimen/len_24"
-            android:layout_height="@dimen/len_24"
-            android:layout_gravity="center"
+            android:layout_width="@dimen/len_28"
+            android:layout_height="@dimen/len_28"
+            android:clickable="true"
             android:contentDescription="@string/app_name"
             android:foreground="@drawable/ic_touch_fg"
             android:padding="@dimen/len_4"
             android:src="@drawable/ic_play"
-            android:tint="@color/black" />
+            android:tint="@color/trans" />
+
         <ImageView
-            android:layout_width="@dimen/len_24"
-            android:layout_height="@dimen/len_24"
-            android:layout_gravity="end|center_vertical"
+            android:layout_width="@dimen/len_28"
+            android:layout_height="@dimen/len_28"
             android:contentDescription="@string/app_name"
             android:foreground="@drawable/ic_touch_fg"
+            android:clickable="true"
             android:padding="@dimen/len_4"
             android:src="@drawable/ic_more" />
-    </FrameLayout>
+    </LinearLayout>
 </LinearLayout>

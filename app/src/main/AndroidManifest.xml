@@ -8,29 +8,65 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 存储读写权限 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 录音权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+
     <application
-        android:name="com.xana.acg.com.app.Application"
+        android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bg_error"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/bg_error"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".actis.AccountActivity"
+        android:theme="@style/AppTheme.TransStatusBar"
+        android:requestLegacyExternalStorage="true">
+        <activity android:name=".actis.local.DownloadActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".actis.drawer.IActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.ImageShowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.VideoMallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.GameSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.AnimeSearchActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".actis.MusicSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.DailyMusicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.NewMusicMallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.MusicListMallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.MusicListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".actis.AccountActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LaunchActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,31 +74,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="io.vov.vitamio.activity.InitActivity"
+            android:name=".actis.AnimePlayerActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name=".actis.AnimePlayerActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".actis.MusicPlayerActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".actis.SearchActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".actis.GameActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar.Fade" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".IndexActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar" />
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

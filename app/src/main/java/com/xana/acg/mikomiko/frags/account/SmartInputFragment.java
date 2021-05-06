@@ -14,34 +14,14 @@ import butterknife.OnClick;
 
 public class SmartInputFragment extends Fragment {
 
-
-
-    public interface KEY{
-        String TITLE = "TITLE";
-        String SMART = "SMART";
-        String PASS = "PASS";
-        String NEW_PASS = "NEW_PASS";
-        String CAPTCHA = "CAPTCHA";
-    }
-
     @BindView(R.id.edit_smart)
     EditText mSmart;
-
-
-
-    @Override
-    protected void initArgs(Bundle bundle) {
-        super.initArgs(bundle);
-
-    }
-
-    private AccountActivity activity;
-
+    private AccountActivity act;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        activity = (AccountActivity) context;
+        act = (AccountActivity) context;
     }
 
     @Override
@@ -49,10 +29,20 @@ public class SmartInputFragment extends Fragment {
         return R.layout.fragment_smart_input;
     }
 
-    @OnClick(R.id.btn_next)
-    void addFrag(View view){
-        String smart = mSmart.getText().toString();
-        activity.smart = smart;
-        activity.getPresenter().checkExist(smart);
+    @OnClick({R.id.btn_next, R.id.iv_clear})
+    void click(View view){
+        if(view.getId()==R.id.btn_next) {
+            String smart = mSmart.getText().toString();
+            act.click(0, smart);
+        }else {
+            mSmart.setText("");
+        }
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        act = null;
     }
 }

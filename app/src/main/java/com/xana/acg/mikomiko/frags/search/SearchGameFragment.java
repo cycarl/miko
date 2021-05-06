@@ -19,7 +19,7 @@ import butterknife.BindView;
 public class SearchGameFragment extends PresenterFragment<SearchContract.GamePresenter>
 implements SearchContract.GameView, Recycler.OnMoreLoadListener, SearchActivity.OnSearchListener {
 
-    @BindView(R.id.rv)
+    @BindView(R.id.recycler)
     Recycler mRv;
 
     private int page = 0;
@@ -35,7 +35,7 @@ implements SearchContract.GameView, Recycler.OnMoreLoadListener, SearchActivity.
     protected void initWidget(View root) {
         super.initWidget(root);
         mRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRv.setAdapter(mAdapter = new GameFragment.Adapter(activity()));
+        mRv.setAdapter(mAdapter = new GameFragment.Adapter(acti()));
         mRv.setListener(this);
     }
 
@@ -47,11 +47,10 @@ implements SearchContract.GameView, Recycler.OnMoreLoadListener, SearchActivity.
     @Override
     public void onMoreLoad() {
         if(!hasMore){
-            showError("我是有底线的~~");
+            showMsg("我是有底线的~");
             return;
         }
-        isSearch = false;
-        mPresenter.search(key, ++page);
+        mPresenter.search(keyword, ++page, false);
     }
 
     @Override
@@ -61,21 +60,19 @@ implements SearchContract.GameView, Recycler.OnMoreLoadListener, SearchActivity.
 
 
     @Override
-    public void onLoad(PageResult<Game> res) {
+    public void onLoad(PageResult<Game> res, boolean rf) {
+        ok(0);
         Log.e("gameRes", res.toString());
         hasMore = res.hasMore();
-        if(isSearch)
+        if(rf)
             mAdapter.replace(res.getContent());
         else mAdapter.add(res.getContent());
     }
 
-    private String key;
-    private boolean isSearch;
+    private String keyword;
 
     @Override
     public void search(String key) {
-        this.key = key;
-        isSearch = true;
-        mPresenter.search(key, page);
+        mPresenter.search(keyword = key, page=1, true);
     }
 }

@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actis.SearchActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".actis.SearchActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionBarWithStatusBarSize"
-        android:paddingTop="@dimen/statusBarSize"/>
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/len_32"
-        app:tabIndicatorHeight="@dimen/len_0"
-        app:tabSelectedTextColor="@color/black"
-        app:tabTextAppearance="@style/TL0"
-        app:tabTextColor="@color/grey_500" />
-    
+        android:layout_height="wrap_content"
+        android:background="@color/trans"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarWithStatusBarSize"
+            android:paddingTop="@dimen/statusBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:titleTextColor="@color/grey"
+            app:title="异世界"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_32"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:tabIndicatorHeight="@dimen/len_0"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:tabTextColor="@color/grey" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -145,6 +145,11 @@ public abstract class RecyclerAdapter<Data>
         notifyItemInserted(mDataList.size() - 1);
     }
 
+    public void add(Data data, int i){
+        mDataList.add(i, data);
+        notifyItemInserted(i);
+    }
+
     /**
      * 插入一堆数据，并通知这段集合更新
      *
@@ -177,6 +182,21 @@ public abstract class RecyclerAdapter<Data>
     public void clear() {
         mDataList.clear();
         notifyDataSetChanged();
+    }
+    /**
+     * 替换
+     */
+
+    public void replace(int i, Data data){
+        if(i>=mDataList.size()){
+            add(data);
+            return;
+        }
+        if(data==mDataList.get(i))
+            return;
+        mDataList.remove(i);
+        mDataList.add(i, data);
+        notifyItemChanged(i);
     }
 
     /**
@@ -214,7 +234,6 @@ public abstract class RecyclerAdapter<Data>
             // 回掉方法
             this.mListener.onItemClick(viewHolder, mDataList.get(pos));
         }
-
     }
 
     @Override

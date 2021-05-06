@@ -3,7 +3,7 @@
     <string name="data_request_fail">请求失败</string>
 
 
-    <string name="app_name">mikomiko</string>
+    <string name="app_name">miko</string>
     <string name="title_copyright">mikomiko © 2020–2021 by xana</string>
     <string name="title_activity_launch">@string/app_name</string>
     <string name="title_activity_user">UserActivity</string>
@@ -17,8 +17,19 @@
     <string name="hello_world">你好，世界！</string>
 
     <string name="label_tips">私はさーその言葉を受けた時にはさ、もうきちんと救われて行ったんだよ！ありがとう</string>
-    <string name="label_nickname">某傲娇的只眼姬</string>
+    <string name="label_nickname">某科学的app</string>
     <string name="label_tag">纯爱 神作</string>
     <string name="data_request_empty">何も探しません～</string>
     <string name="label_sel_src">资源%s（%s话)</string>
+
+    <string name="data_load_fail">数据加载失败了(＠_＠;)</string>
+    <string name="data_download_test">下载测试中(＠_＠;)</string>
+    <string name="data_no_comment">还没有任何评论呢(＠_＠;)</string>
+    <string name="data_go_comment">快来抢占沙发！</string>
+    <string name="data_click_reload">点击重新加载</string>
+
+    <string name="data_times">9999</string>
+    <string name="data_dura">00:00</string>
+    <string name="label_episode">第%s话</string>
+    <string name="label_space" />
 </resources>

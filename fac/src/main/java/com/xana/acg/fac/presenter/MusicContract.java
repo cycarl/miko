@@ -3,9 +3,8 @@ package com.xana.acg.fac.presenter;
 import com.xana.acg.com.presenter.BaseContract;
 import com.xana.acg.fac.model.api.RespModel;
 import com.xana.acg.fac.model.music.Data;
-import com.xana.acg.fac.model.music.Elite;
-import com.xana.acg.fac.model.music.NewSong;
-import com.xana.acg.fac.model.music.SongList;
+import com.xana.acg.fac.model.music.NewMusic;
+import com.xana.acg.fac.model.music.MusicList;
 
 import java.util.List;
 
@@ -14,11 +13,15 @@ public interface MusicContract {
         void getSongList(int limit);
         void getNewSongs(int limit);
         void getElite(int offset);
+
+        void getBanner(int i);
+
     }
 
     interface View extends BaseContract.View<Presenter>{
-        void onSongListLoad(List<SongList> songLists);
-        void onNewSongsLoad(List<NewSong> songs);
+        void onSongListLoad(List<MusicList> songLists);
+        void onNewSongsLoad(List<NewMusic> songs);
         void onEliteLoad(RespModel<List<Data>> elites);
+        void onBannerLoad(List<String> banner);
     }
 }

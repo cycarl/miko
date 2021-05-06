@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/len_10"
+    android:paddingEnd="@dimen/len_10"
+    android:paddingTop="@dimen/len_5"
+    android:paddingBottom="@dimen/len_5"
+    android:foreground="@drawable/ic_touch_fg">
+    <com.xana.acg.com.widget.PortraitView
+        android:id="@+id/pv_up_avater"
+        android:layout_width="@dimen/len_52"
+        android:layout_height="@dimen/len_52"
+        android:src="@drawable/ic_my"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/len_52"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/len_56">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_nickname"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_16" />
+            <ImageView
+                android:id="@+id/iv_sex"
+                android:layout_width="@dimen/len_12"
+                android:layout_height="@dimen/len_12"
+                android:src="@drawable/ic_sex"
+                android:contentDescription="@string/app_name"
+                android:layout_marginStart="@dimen/len_4"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_tips"
+            android:textSize="@dimen/font_13"
+            android:maxLines="1"
+            android:textColor="@color/grey"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
+</FrameLayout>

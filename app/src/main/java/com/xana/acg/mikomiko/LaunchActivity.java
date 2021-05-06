@@ -1,7 +1,16 @@
 package com.xana.acg.mikomiko;
 
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Handler;
+
+import androidx.core.app.ActivityCompat;
+
 import com.xana.acg.com.app.Activity;
+import com.xana.acg.fac.priavte.Account;
+import com.xana.acg.mikomiko.actis.local.DownloadActivity;
 
 public class LaunchActivity extends Activity {
 
@@ -17,18 +26,15 @@ public class LaunchActivity extends Activity {
     }
 
     private void skip(){
-        new Thread(){
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                navTo(MainActivity.class);
+                if(Account.isLogin())
+                    navTo(IndexActivity.class);
+                else navTo(MainActivity.class);
                 finish();
             }
-        }.start();
+        }, 1000);
     }
+
 }

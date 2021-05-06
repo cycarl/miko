@@ -7,7 +7,7 @@ import java.util.List;
 public interface ImageContract {
     interface Presenter extends BaseContract.Presenter{
         // 数据库第start开始，获取size个, f是否涩图
-        void get(int start, int size, boolean isH);
+        void getImages(int start, int size, boolean isH);
     }
 
     interface View extends BaseContract.View<Presenter>{

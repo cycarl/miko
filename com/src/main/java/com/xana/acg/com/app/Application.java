@@ -2,8 +2,11 @@ package com.xana.acg.com.app;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.BlurMaskFilter;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -11,10 +14,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.ViewTarget;
+import com.xana.acg.com.R;
+import com.xana.acg.com.widget.BlurTransformation;
+
 import net.qiujuer.genius.kit.handler.Run;
 import net.qiujuer.genius.kit.handler.runable.Action;
 
 import java.io.File;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,12 +33,38 @@ public class Application extends android.app.Application {
     private static Application instance;
 
     private final List<Activity> activityList = new LinkedList<>();
+    private MediaPlayer mediaPlayer;
+    private Date date;
+
+    public static void setImage(View view, String uri){
+        Glide.with(view.getContext())
+                .load(uri)
+                .bitmapTransform(new BlurTransformation(view.getContext()))
+                .into(new ViewTarget<View, GlideDrawable>(view) {
+                    @Override
+                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        view.setBackground(resource.getCurrent());
+                    }
+                });
+
+    }
+
+    public static synchronized MediaPlayer getMediaPlayer(){
+        if(instance.mediaPlayer==null)
+            instance.mediaPlayer = new MediaPlayer();
+        return instance.mediaPlayer;
+    }
+
+    public static synchronized Date getDate(){
+        if(instance.date==null)
+            instance.date = new Date();
+        return instance.date;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
-
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
@@ -147,7 +184,6 @@ public class Application extends android.app.Application {
      * @param msg 字符串
      */
     public static void showToast(final String msg) {
-        // Toast 只能在主线程中显示，所有需要进行线程转换，
         // 保证一定是在主线程进行的show操作
         Run.onUiAsync(new Action() {
             @Override

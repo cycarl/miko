@@ -1,7 +1,7 @@
 package com.xana.acg.fac.model.api;
 import java.util.List;
 
-public class PageResult<T> {
+public class PageResult<T>  implements IModel {
     private int pageNum;
     private int pageSize;
     private long totalSize;
@@ -15,9 +15,13 @@ public class PageResult<T> {
         return content;
     }
 
-
     public boolean hasMore(){
         return pageNum<totalPages;
+    }
+
+    @Override
+    public boolean empty(){
+        return content==null||content.size()==0;
     }
 
 

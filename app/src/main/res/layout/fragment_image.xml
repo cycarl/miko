@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".frags.ImageFragment">
 
-
     <com.xana.acg.com.widget.recycler.Recycler
-        android:id="@+id/rv"
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.xana.acg.com.widget.RoundImageView
+    <ImageView
         android:id="@+id/iv_trigger"
-        android:layout_width="@dimen/len_40"
-        android:layout_height="@dimen/len_40"
+        android:layout_width="@dimen/len_44"
+        android:layout_height="@dimen/len_44"
         android:layout_gravity="end|bottom"
-        android:layout_marginEnd="@dimen/len_20"
-        android:layout_marginBottom="@dimen/len_20"
-        app:radius="@dimen/len_20"
-        android:foreground="@drawable/ic_touch_fg"
-        android:src="@drawable/ic_my"/>
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/len_24"
+        android:src="@drawable/ic_trigger"
+        android:contentDescription="@string/app_name" />
 
 </FrameLayout>
 

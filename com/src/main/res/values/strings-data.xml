@@ -8,7 +8,7 @@
 
     <string name="data_invalid_pass">密码应不少于6位</string>
 
-    <string name="data_invalid_nick">昵称应不少于2位,且不含空格</string>
+    <string name="data_invalid_nick">昵称应不少于2位,且不含空格等特殊字符</string>
 
     <string name="data_invalid_captcha">验证码不正确!</string>
 

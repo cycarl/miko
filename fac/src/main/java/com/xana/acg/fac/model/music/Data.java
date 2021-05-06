@@ -12,9 +12,9 @@ public class Data {
     private String extAlg;
     private int type;
     private String alg;
-    private Elite data;
+    private Video<Musicer> data;
 
-    public Elite getData() {
+    public Video<Musicer> getData() {
         return data;
     }
 

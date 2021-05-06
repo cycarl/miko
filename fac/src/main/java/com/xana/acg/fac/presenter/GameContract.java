@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface GameContract {
     interface Presenter extends BaseContract.Presenter{
-        void get(int page, int size);
+        void get(int page, int size, boolean refresh);
         void get(String id);
     }
 

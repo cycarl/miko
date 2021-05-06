@@ -16,10 +16,12 @@ public class MainActivity extends Activity {
         switch (view.getId()) {
             case R.id.btn_smart_login:
                 navTo(AccountActivity.class);
+                finish();
                 return;
         }
         navTo(IndexActivity.class);
         finish();
     }
+
 
 }

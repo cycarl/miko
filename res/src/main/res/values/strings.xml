@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="data_times">9999</string>
-    <string name="data_dura">22:22</string>
-    <string name="label_episode">第%s话</string>
-    <string name="label_space" />
+
+    <string name="label_date">2021-05-23</string>
+    <string name="label_reply_detail">回复详情</string>
+    <string name="label_comment_preview_0"><font color="#00ff00">某科学的app</font>: 某科学的app某科学的app</string>
+    <string name="label_comment_preview_1">"<font color="#00ff00">某科学的app</font> 回复 @某科学的app: 某科学的app某科学的app"</string>
+    <string name="label_h_pass_hint">请输入访问密码</string>
+    <string name="data_qq">2038979315</string>
+    <string name="data_email">邮箱: 2038979315@qq.com</string>
+    <string name="label_update">新版更新</string>
+
 </resources>

@@ -25,14 +25,14 @@ public class SearchAnimePresenter extends BasePresenter<SearchContract.AnimeView
 
 
     @Override
-    public void onDataNotAvailable(int strRes) {
+    public void fail(String strRes) {
         SearchContract.AnimeView view = getView();
         if(view==null) return;
-        view.showError(strRes);
+        view.showMsg(strRes);
     }
 
     @Override
-    public void onDataLoaded(List<Anime> animes) {
+    public void success(List<Anime> animes) {
         SearchContract.AnimeView view = getView();
         if(view==null) return;
         List<Anime> left = new ArrayList<>();
@@ -46,7 +46,6 @@ public class SearchAnimePresenter extends BasePresenter<SearchContract.AnimeView
         Run.onUiAsync(new Action() {
             @Override
             public void call() {
-                ok();
                 view.onLeftLoad(left);
                 view.onRightLoad(right);
             }

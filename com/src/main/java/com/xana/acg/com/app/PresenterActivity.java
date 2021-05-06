@@ -1,10 +1,6 @@
 package com.xana.acg.com.app;
 
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-
 import com.xana.acg.com.presenter.BaseContract;
-
 
 public abstract class PresenterActivity<T extends BaseContract.Presenter>
         extends ToolbarActivity
@@ -21,21 +17,11 @@ public abstract class PresenterActivity<T extends BaseContract.Presenter>
     }
 
     @Override
-    public void showError(int str) {
+    public void showMsg(int str) {
         Application.showToast(str);
     }
 
 //    private ProgressDialog mProgressDialog;
-
-    @Override
-    public void showLoading() {
-        // TODO 加载框
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
 
     @Override
     public void setPresenter(T presenter) {
@@ -47,16 +33,18 @@ public abstract class PresenterActivity<T extends BaseContract.Presenter>
         super.onDestroy();
         if (mPresenter != null)
             mPresenter.destroy();
+        mPresenter = null;
     }
 
     @Override
-    public void showError(String msg) {
+    public void showMsg(String msg) {
         Application.showToast(msg);
+        ok(2);
     }
 
     @Override
-    public void showMsg(int strRes) {
-
+    public void loading() {
+        ok(1);
     }
 }
 

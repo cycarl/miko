@@ -16,11 +16,12 @@ public class AnimePlayerPresenter extends BasePresenter<AnimePlayerContract.View
 
     @Override
     public void get(String url) {
+        start();
         AnimeHelper.getDetail(url, this);
     }
 
     @Override
-    public void onDataLoaded(Detail data) {
+    public void success(Detail data) {
         AnimePlayerContract.View view = getView();
         if(view==null) return;
         Run.onUiAsync(new Action() {
@@ -32,9 +33,9 @@ public class AnimePlayerPresenter extends BasePresenter<AnimePlayerContract.View
     }
 
     @Override
-    public void onDataNotAvailable(int strRes) {
+    public void fail(String strRes) {
         AnimePlayerContract.View view = getView();
         if(view==null) return;
-        view.showError(strRes);
+        view.showMsg(strRes);
     }
 }

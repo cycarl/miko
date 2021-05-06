@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/len_14"
+    android:layout_marginTop="@dimen/len_14"
+    android:layout_marginEnd="@dimen/len_14"
+    android:background="@drawable/bg_item_elite"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.xana.acg.com.widget.RoundImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/ic_touch_fg"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_loading"
+            app:left_top_radius="@dimen/len_10"
+            app:right_top_radius="@dimen/len_10" />
+
+        <ImageView
+            android:layout_width="@dimen/len_36"
+            android:layout_height="@dimen/len_36"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play"
+            android:tint="@color/white_alpha_32" />
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:padding="@dimen/len_6">
+
+            <ImageView
+                android:layout_width="@dimen/len_12"
+                android:layout_height="@dimen/len_12"
+
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_play_1" />
+
+            <TextView
+                android:id="@+id/tv_plays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/data_times"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_10" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:padding="@dimen/len_6">
+
+            <ImageView
+                android:layout_width="@dimen/len_12"
+                android:layout_height="@dimen/len_12"
+
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_dura" />
+
+            <TextView
+                android:id="@+id/tv_dura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/len_14"
+                android:text="@string/data_dura"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_10" />
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/len_10"
+        android:paddingTop="@dimen/len_6"
+        android:paddingEnd="@dimen/len_10"
+        android:paddingBottom="@dimen/len_6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/len_40"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_tips"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_14"
+            android:gravity="center_vertical"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_artist"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/font_13"
+            android:gravity="center_vertical"
+            android:text="@string/label_nickname"/>
+
+
+
+
+    </LinearLayout>
+</LinearLayout>

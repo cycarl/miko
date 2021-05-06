@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="74dp"
-    android:background="@color/mediacontroller_bg"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -18,7 +18,7 @@
             android:layout_marginLeft="5dp"
             android:background="@drawable/mediacontroller_button"
             android:contentDescription="@string/mediacontroller_play_pause"
-            android:src="@drawable/mediacontroller_pause" />
+            android:src="@drawable/ic_play" />
 
         <TextView
             android:id="@+id/mediacontroller_time_current"
@@ -49,14 +49,5 @@
             android:focusable="true"
             android:max="1000" />
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/mediacontroller_file_name"
-        style="@style/MediaController_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:ellipsize="marquee"
-        android:singleLine="true" />
 
 </LinearLayout>

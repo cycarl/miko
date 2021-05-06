@@ -37,10 +37,8 @@ public class Recycler extends RecyclerView {
             if(flag&&mListener!=null){
                 mListener.onMoreLoad();
             }
-
         }
     }
-
     public interface OnMoreLoadListener{
         void onMoreLoad();
     }

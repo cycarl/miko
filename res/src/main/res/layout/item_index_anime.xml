@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/len_4"
+    android:background="@drawable/bg_item_elite"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.xana.acg.com.widget.RoundImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_256"
+            android:adjustViewBounds="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_loading"
+            app:left_top_radius="@dimen/len_6"
+            app:right_top_radius="@dimen/len_6" />
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="@dimen/len_4"
+            android:text="@string/label_nickname"
+            android:textColor="@color/red_a100"
+            android:textSize="@dimen/font_13" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/len_7"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/label_nickname"
+        android:textSize="@dimen/font_14" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/len_7"
+        android:layout_marginBottom="@dimen/len_7"
+        android:text="@string/data_dura"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/font_13"
+        android:layout_gravity="end|bottom"/>
+</LinearLayout>

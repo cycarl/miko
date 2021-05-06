@@ -14,12 +14,13 @@
     <string name="label_rank">排行榜</string>
     <string name="label_channel">电台</string>
     <string name="label_live">直播</string>
-    <string name="label_song_recom">推荐歌曲</string>
-    <string name="label_more">更多</string>
+    <string name="label_song_recom">推荐歌单</string>
+    <string name="label_more_song_list">歌单广场</string>
     <string name="label_song_new">新歌</string>
+    <string name="label_more_song_new">新歌推荐</string>
     <string name="label_elite">精选</string>
     <string name="label_get_new">获取新内容</string>
-    <string name="copyright">MikoMiko 2020-2021</string>
+    <string name="copyright">mikomiko 2021-04-12</string>
     <string name="label_enjoy_now">立即体验</string>
     <string name="label_smart_input_tip">未注册手机号登录后将自动创建账号</string>
     <string name="label_smart_hint">请输入手机号码</string>
@@ -31,4 +32,42 @@
     <string name="label_change_pass_hint">设置登录密码，不少于6位</string>
     <string name="label_reverse_second">%ds</string>
     <string name="label_captcha_send_tip">验证码已发送至</string>
+    <string name="label_all_to_play">播放全部</string>
+    <string name="label_total_music">(共%d首)</string>
+    <string name="label_favor_op_and_data">+ 收藏 (%s)</string>
+    <string name="label_download">下载</string>
+    <string name="label_multi_sel">多选</string>
+    <string name="label_recommend_alpha">Recommend</string>
+
+    <string name="label_daily_tips">根据你的音乐口味, 为你推荐好音乐 ♪(^∇^*)</string>
+    <string name="label_daily_recom">每日推荐</string>
+
+    <string name="label_sunday">日曜日</string>
+    <string name="label_monday">月曜日</string>
+    <string name="label_quesday">水曜日</string>
+    <string name="label_wednesday">木曜日</string>
+    <string name="label_thursday">火曜日</string>
+    <string name="label_friday">金曜日</string>
+    <string name="label_saturday">土曜日</string>
+    <string name="label_danmaku_send">点我发弹幕</string>
+    <string name="tip_get_anime">获取了最新动漫！</string>
+    <string name="tip_no_more">我是有底线的~</string>
+    <string name="tip_get_new">获取了新内容！</string>
+    <string name="tip_get_img">获取了最新美图!</string>
+    <string name="tip_get_galgame">获取了最新galgame!</string>
+    <string name="label_comment_input">发一条友善的评论</string>
+    <string name="label_reply_count">相关回复共%d条</string>
+    <string name="data_contributes">贡献: xana、树状图设计者</string>
+    <string name="data_opensource">开源: https://gitee.com/xana2020/mikomiko-app\n如果您喜欢的话，还请勿忘star一波ο(=•ω＜=)ρ⌒☆</string>
+    <string name="label_app_des">欢迎每位用户提交bug记录和app体验建议,\n欢迎各位开发者交流学习, \n欢迎各位绅士分享gal资源(笑)。</string>
+    <string name="label_define">声明: 本项目仅限android技术学习交流之用，禁止一切商业和违法行为。</string>
+    <string name="label_pass_reset">忘记密码？</string>
+    <string name="label_local_music">本地音乐</string>
+    <string name="label_local_video">本地视频</string>
+    <string name="label_download_manager">下载管理</string>
+    <string name="label_near_play">最近播放</string>
+    <string name="label_my_favor">我的收藏</string>
+    <string name="label_downloading">开始下载...</string>
+
+
 </resources>

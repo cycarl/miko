@@ -14,7 +14,7 @@
         android:paddingTop="@dimen/len_5"
         android:paddingBottom="@dimen/len_5"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
+        android:id="@+id/recycler"
         android:layout_marginTop="@dimen/len_5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

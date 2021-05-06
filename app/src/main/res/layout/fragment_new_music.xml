@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frags.music.NewMusicFragment"
+    android:background="@drawable/pixiv_004"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_156">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/len_16"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_32"
+                    android:text="@string/label_song_list"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_title_alpha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_12"
+                    android:text="@string/label_recommend_alpha"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_title">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/len_14">
+                <ImageView
+                    android:layout_width="@dimen/len_20"
+                    android:layout_height="@dimen/len_20"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_play_"
+                    android:tint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_all_to_play"
+                    android:textSize="@dimen/font_14"
+                    android:layout_marginStart="@dimen/len_10" />
+
+                <TextView
+                    android:id="@+id/tv_total_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_total_music"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/font_13" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:padding="@dimen/len_10"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/len_16"
+                    android:layout_height="@dimen/len_16"
+                    android:src="@drawable/ic_multi_sel_1"
+                    android:tint="@color/black_alpha_160"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginEnd="@dimen/len_2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/font_13"
+                    android:text="@string/label_multi_sel"/>
+            </LinearLayout>
+
+        </FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@color/white_alpha_240"
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

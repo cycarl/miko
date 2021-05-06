@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog">
+    <ImageView
+        android:layout_width="@dimen/len_32"
+        android:layout_height="@dimen/len_32"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_trigger" />
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_24"
+        android:layout_marginStart="@dimen/len_32"
+        android:layout_marginTop="@dimen/len_32"
+        android:layout_marginEnd="@dimen/len_32"
+        android:background="@color/trans"
+        android:hint="@string/label_h_pass_hint"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/ic_cursor"
+        android:textSize="@dimen/font_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/len_30"
+        android:layout_marginTop="@dimen/len_60"
+        android:layout_marginEnd="@dimen/len_32"
+        android:background="@color/white_alpha_128" />
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="@dimen/len_40"
+        android:layout_height="@dimen/len_32"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="@dimen/len_64"
+        android:layout_marginEnd="@dimen/len_6"
+        android:layout_marginBottom="@dimen/len_6"
+        android:foreground="@drawable/ic_touch_fg"
+        android:gravity="center"
+        android:text="ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_20"
+        tools:targetApi="m" />
+</FrameLayout>

@@ -19,5 +19,16 @@ public class RegisterStatus  extends RespModel {
         return exist>0;
     }
 
+    public int getExist() {
+        return exist;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public boolean isHasPassword() {
+        return hasPassword;
+    }
 }
 

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".actis.AnimePlayerActivity">
+
+    <FrameLayout
+        android:id="@+id/full"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:paddingEnd="@dimen/statusBarSize"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_224">
+
+        <FrameLayout
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/black">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionBarWithStatusBarSize"
+                android:paddingTop="@dimen/statusBarSize"
+                android:translationZ="@dimen/len_2"
+                app:title=" " />
+
+            <io.vov.vitamio.widget.VideoView
+                android:id="@+id/vitamio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:id="@+id/panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/bg_panel"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/len_10">
+
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_pause_video_" />
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_next_ep" />
+
+                <net.qiujuer.genius.ui.widget.SeekBar
+                    android:id="@+id/sb_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:gRippleColor="@color/white"
+                    app:gScrubberColor="@color/white_alpha_160"
+                    app:gScrubberStroke="2dp"
+                    app:gThumbColor="@color/white"
+                    app:gThumbSize="3dp"
+                    app:gTouchSize="@dimen/len_6"
+                    app:gTrackColor="@color/white_alpha_64" />
+
+                <TextView
+                    android:id="@+id/tv_cur_time"
+                    android:layout_width="@dimen/len_40"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/data_dura"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/len_5"
+                    android:text="@string/data_dura"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+                <ImageView
+                    android:id="@+id/iv_full_screen"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/len_5"
+                    android:src="@drawable/ic_full_screen"
+                    android:tint="@color/white" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <net.qiujuer.genius.ui.widget.Loading
+                    android:id="@+id/loading"
+                    android:layout_width="@dimen/len_32"
+                    android:layout_height="@dimen/len_32"
+                    app:gBackgroundColor="@null"
+                    app:gForegroundColor="@color/white_alpha_160" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/buffer_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white_alpha_160"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:id="@+id/net_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white_alpha_160"
+                        android:textSize="@dimen/font_14" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="@dimen/len_100"
+        android:layout_height="@dimen/len_32"
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="@color/colorAccent"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:tabTextColor="@color/black_alpha_112" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

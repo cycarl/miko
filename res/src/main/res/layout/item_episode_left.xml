@@ -6,8 +6,7 @@
     android:layout_marginEnd="@dimen/len_5"
     android:layout_marginTop="@dimen/len_5"
     android:layout_marginBottom="@dimen/len_5"
-    android:background="@drawable/shape_border_rad_5"
-    android:foreground="@drawable/ic_touch_fg"
+    android:background="@drawable/sel_bg_rad_6"
     android:id="@+id/fl_back">
     <TextView
         android:id="@+id/tv_title"

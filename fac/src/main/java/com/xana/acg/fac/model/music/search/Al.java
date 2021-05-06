@@ -9,4 +9,25 @@ public class Al {
     private String picUrl;
     private String name;
     private String id;
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Al{" +
+                "picUrl='" + picUrl + '\'' +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }

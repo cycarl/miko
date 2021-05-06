@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".actis.GameActivity">
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:title=" "
@@ -16,319 +14,324 @@
         android:paddingTop="@dimen/statusBarSize"
         android:translationZ="@dimen/len_2"
         tools:targetApi="lollipop" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/actionBarWithStatusBarSize">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="@dimen/len_24"
-                    android:layout_height="@dimen/len_24"
-                    android:src="@drawable/ic_tag" />
-
-                <TextView
-                    android:id="@+id/tv_tag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/len_28"
-                    android:layout_marginTop="@dimen/len_6"
-                    android:text="@string/label_tag"
-                    android:textSize="@dimen/font_12" />
-
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/len_20"
-                    android:layout_marginBottom="@dimen/len_10"
-                    android:text="@string/label_galgame_title"
-                    android:textColor="#6f7df6"
-                    android:textSize="@dimen/font_18" />
-            </FrameLayout>
-
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="@dimen/len_10">
+                android:layout_marginTop="@dimen/actionBarWithStatusBarSize"
+                android:paddingStart="@dimen/len_14"
+                android:paddingEnd="@dimen/len_14">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="@dimen/len_24"
+                        android:layout_height="@dimen/len_24"
+                        android:src="@drawable/ic_tag" />
+
+                    <TextView
+                        android:id="@+id/tv_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/len_28"
+                        android:layout_marginTop="@dimen/len_6"
+                        android:text="@string/label_tag"
+                        android:textSize="@dimen/font_13"
+                        android:textColor="@color/black_alpha_128"/>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/len_24"
+                        android:layout_marginBottom="@dimen/len_10"
+                        android:text="@string/label_galgame_title"
+                        android:textColor="#6f7df6"
+                        android:textSize="@dimen/font_20" />
+                </FrameLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/len_6"
-                        android:paddingBottom="@dimen/len_6"
-                        android:text="@string/label_game_shot"
-                        android:textColor="@color/textAccent"
-                        android:textSize="@dimen/len_14" />
-
-                    <com.xana.acg.com.widget.recycler.Recycler
-                        android:id="@+id/rv_images"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:isScrollContainer="false" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/len_6"
-                        android:paddingBottom="@dimen/len_6"
-                        android:text="@string/label_game_shot"
-                        android:textColor="@color/textAccent"
-                        android:textSize="@dimen/len_14" />
-
-                    <TextView
-                        android:id="@+id/tv_des"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_text"
-                        android:padding="@dimen/len_8"
-                        android:text="@string/label_tips"
-                        android:textSize="@dimen/font_12" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/len_6"
-                        android:paddingBottom="@dimen/len_6"
-                        android:text="@string/label_game_des"
-                        android:textColor="@color/textAccent"
-                        android:textSize="@dimen/len_14" />
-
-                    <TextView
-                        android:id="@+id/tv_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_text"
-                        android:padding="@dimen/len_8"
-                        android:text="@string/label_tips"
-                        android:textSize="@dimen/font_12" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/len_6"
-                        android:paddingBottom="@dimen/len_6"
-                        android:text="@string/label_game_share"
-                        android:textColor="@color/textAccent"
-                        android:textSize="@dimen/len_14" />
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/len_12"
-                        android:background="@drawable/bg_link"
-                        android:orientation="vertical"
-                        android:paddingStart="@dimen/len_10"
-                        android:paddingTop="@dimen/len_16"
-                        android:paddingEnd="@dimen/len_10"
-                        android:paddingBottom="@dimen/len_16">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/len_10"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="@dimen/len_18"
-                                android:layout_height="@dimen/len_18"
-                                android:src="@drawable/ic_star" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/len_4"
-                                android:text="@string/label_getCode"
-                                android:textSize="@dimen/font_12" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:layout_marginStart="@dimen/len_40"
-                                android:background="@drawable/bg_text_pass"
-                                android:gravity="center"
-                                android:padding="@dimen/len_2"
-                                android:text="@string/app_name"
-                                android:textSize="@dimen/font_12" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/len_10"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="@dimen/len_18"
-                                android:layout_height="@dimen/len_18"
-                                android:src="@drawable/ic_key" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/len_4"
-                                android:text="@string/label_unzip"
-                                android:textSize="@dimen/font_12" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="end"
-                                android:layout_marginStart="@dimen/len_40"
-                                android:background="@drawable/bg_text_pass"
-                                android:gravity="center"
-                                android:padding="@dimen/len_2"
-                                android:text="@string/label_unzip_pass"
-                                android:textSize="@dimen/font_12" />
-
-
-                        </LinearLayout>
-
+                        android:orientation="vertical">
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/len_6"
+                            android:paddingBottom="@dimen/len_6"
+                            android:text="@string/label_game_shot"
+                            android:textColor="@color/textAccent"
+                            android:textSize="@dimen/len_14" />
+
+                        <com.xana.acg.com.widget.recycler.Recycler
+                            android:id="@+id/rv_images"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:background="@drawable/bg_text_link"
-                            android:gravity="center"
-                            android:padding="@dimen/len_2"
-                            android:text="@string/app_name"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/len_12" />
+                            android:isScrollContainer="false" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/len_12"
-                        android:background="@drawable/bg_link"
-                        android:orientation="vertical"
-                        android:paddingStart="@dimen/len_10"
-                        android:paddingTop="@dimen/len_16"
-                        android:paddingEnd="@dimen/len_10"
-                        android:paddingBottom="@dimen/len_16">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/len_6"
+                            android:paddingBottom="@dimen/len_6"
+                            android:text="@string/label_game_shot"
+                            android:textColor="@color/textAccent"
+                            android:textSize="@dimen/len_14" />
+
+                        <TextView
+                            android:id="@+id/tv_des"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_text"
+                            android:padding="@dimen/len_8"
+                            android:text="@string/label_tips"
+                            android:textSize="@dimen/font_13" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/len_6"
+                            android:paddingBottom="@dimen/len_6"
+                            android:text="@string/label_game_des"
+                            android:textColor="@color/textAccent"
+                            android:textSize="@dimen/len_14" />
+
+                        <TextView
+                            android:id="@+id/tv_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_text"
+                            android:padding="@dimen/len_8"
+                            android:text="@string/label_tips"
+                            android:textSize="@dimen/font_13" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/len_6"
+                            android:paddingBottom="@dimen/len_6"
+                            android:text="@string/label_game_share"
+                            android:textColor="@color/textAccent"
+                            android:textSize="@dimen/len_14" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/len_10"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:layout_marginBottom="@dimen/len_12"
+                            android:background="@drawable/bg_link"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/len_10"
+                            android:paddingTop="@dimen/len_16"
+                            android:paddingEnd="@dimen/len_10"
+                            android:paddingBottom="@dimen/len_16">
 
-                            <ImageView
-                                android:layout_width="@dimen/len_18"
-                                android:layout_height="@dimen/len_18"
-                                android:src="@drawable/ic_star" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/len_4"
-                                android:text="@string/label_getCode"
-                                android:textSize="@dimen/font_12" />
+                                android:layout_marginBottom="@dimen/len_10"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/len_18"
+                                    android:layout_height="@dimen/len_18"
+                                    android:src="@drawable/ic_star" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/len_4"
+                                    android:text="@string/label_getCode"
+                                    android:textSize="@dimen/font_13" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="@dimen/len_40"
+                                    android:background="@drawable/bg_text_pass"
+                                    android:gravity="center"
+                                    android:padding="@dimen/len_2"
+                                    android:text="@string/app_name"
+                                    android:textSize="@dimen/font_13" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/len_10"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/len_18"
+                                    android:layout_height="@dimen/len_18"
+                                    android:src="@drawable/ic_key" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/len_4"
+                                    android:text="@string/label_unzip"
+                                    android:textSize="@dimen/font_13" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="@dimen/len_40"
+                                    android:background="@drawable/bg_text_pass"
+                                    android:gravity="center"
+                                    android:padding="@dimen/len_2"
+                                    android:text="@string/label_unzip_pass"
+                                    android:textSize="@dimen/font_13" />
+
+
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
-                                android:layout_marginStart="@dimen/len_40"
-                                android:background="@drawable/bg_text_pass"
+                                android:background="@drawable/bg_text_link"
                                 android:gravity="center"
                                 android:padding="@dimen/len_2"
                                 android:text="@string/app_name"
-                                android:textSize="@dimen/len_12" />
-
-
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_13" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/len_10"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:layout_marginBottom="@dimen/len_12"
+                            android:background="@drawable/bg_link"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/len_10"
+                            android:paddingTop="@dimen/len_16"
+                            android:paddingEnd="@dimen/len_10"
+                            android:paddingBottom="@dimen/len_16">
 
-                            <ImageView
-                                android:layout_width="@dimen/len_20"
-                                android:layout_height="@dimen/len_20"
-                                android:src="@drawable/ic_key" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/len_4"
-                                android:text="@string/label_unzip"
-                                android:textSize="@dimen/font_12" />
+                                android:layout_marginBottom="@dimen/len_10"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/len_18"
+                                    android:layout_height="@dimen/len_18"
+                                    android:src="@drawable/ic_star" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/len_4"
+                                    android:text="@string/label_getCode"
+                                    android:textSize="@dimen/font_13" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="@dimen/len_40"
+                                    android:background="@drawable/bg_text_pass"
+                                    android:gravity="center"
+                                    android:padding="@dimen/len_2"
+                                    android:text="@string/app_name"
+                                    android:textSize="@dimen/font_13" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/len_10"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/len_20"
+                                    android:layout_height="@dimen/len_20"
+                                    android:src="@drawable/ic_key" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/len_4"
+                                    android:text="@string/label_unzip"
+                                    android:textSize="@dimen/font_13" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginStart="@dimen/len_40"
+                                    android:background="@drawable/bg_text_pass"
+                                    android:gravity="center"
+                                    android:padding="@dimen/len_2"
+                                    android:text="@string/label_unzip_pass"
+                                    android:textSize="@dimen/font_13" />
+
+
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
-                                android:layout_marginStart="@dimen/len_40"
-                                android:background="@drawable/bg_text_pass"
+                                android:background="@drawable/bg_text_link"
                                 android:gravity="center"
                                 android:padding="@dimen/len_2"
-                                android:text="@string/label_unzip_pass"
+                                android:text="@string/app_name"
+                                android:textColor="@color/white"
                                 android:textSize="@dimen/len_12" />
-
-
                         </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:background="@drawable/bg_text_link"
-                            android:gravity="center"
-                            android:padding="@dimen/len_2"
-                            android:text="@string/app_name"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/len_12" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/container" />
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </FrameLayout>
 
 

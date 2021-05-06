@@ -54,7 +54,7 @@ public class Detail {
                 '}';
     }
 
-    public class Src{
+    static public class Src{
 
         /**
          * num : 25
@@ -86,7 +86,7 @@ public class Detail {
         }
     }
 
-    public class Eposide{
+    public static class Eposide{
         /**
          * name : 01
          * info : http://60.205.204.182:6001/anime/7a7a7a66756e7c31323238/0/0

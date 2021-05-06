@@ -3,10 +3,15 @@
     <!--基础色-->
     <color name="colorPrimary">#31373d</color>
     <color name="colorPrimaryDark">#31373d</color>
-    <color name="colorAccent">#1572fc</color>
     <color name="colorLight">@color/white</color>
     <color name="colorDark">@color/black</color>
     <color name="colorAccentAlpha">#801572fc</color>
+
+    <color name="colorError">#AAFF0000</color>
+    <color name="colorAccent">#AFC67EF1</color>
+    <color name="colorBubble">#7EC0EE</color>
+    <color name="colorToolbar">#777777</color>
+    <color name="colorIcon">#707070</color>
 
     <!--背景色-->
     <color name="windowsBackground">#f7f7f7</color>

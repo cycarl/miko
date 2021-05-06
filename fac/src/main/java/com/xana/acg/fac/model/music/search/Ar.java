@@ -7,6 +7,7 @@ public class Ar {
      */
     private String name;
     private String id;
+    private String picUrl;
 
 }
 

@@ -24,7 +24,6 @@ public class PortraitView extends CircleImageView {
         Glide.with(getContext())
                 .load(uri)
                 .centerCrop()
-                .placeholder(R.drawable.bg_ireina)
                 .into(this);
     }
 

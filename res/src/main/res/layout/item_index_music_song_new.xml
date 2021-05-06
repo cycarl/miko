@@ -14,10 +14,9 @@
             android:id="@+id/iv_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:foreground="@drawable/ic_touch_fg"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_ireina"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_loading"
             app:radius="@dimen/len_6" />
 
 
@@ -50,6 +49,6 @@
         android:maxLines="2"
         android:text="@string/label_tips"
         android:textColor="@color/black"
-        android:textSize="@dimen/font_10" />
+        android:textSize="@dimen/font_12" />
 
 </LinearLayout>

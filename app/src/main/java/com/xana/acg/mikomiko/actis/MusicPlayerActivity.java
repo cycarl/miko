@@ -1,51 +1,42 @@
 package com.xana.acg.mikomiko.actis;
-import android.animation.ValueAnimator;
+
+import android.animation.ObjectAnimator;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.text.format.DateFormat;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.xana.acg.Factory;
+import com.xana.acg.mikomiko.App;
 import com.xana.acg.com.app.PresenterActivity;
-import com.xana.acg.com.app.ToolbarActivity;
 import com.xana.acg.com.widget.PortraitView;
-import com.xana.acg.fac.model.music.SearchResult;
-import com.xana.acg.fac.model.music.SongUri;
+import com.xana.acg.fac.model.music.Music;
+import com.xana.acg.fac.model.music.MusicUri;
 import com.xana.acg.fac.presenter.play.MusicPlayerContract;
 import com.xana.acg.fac.presenter.play.MusicPlayerPresenter;
+import com.xana.acg.com.utils.TextUtils;
 import com.xana.acg.mikomiko.R;
+
 import net.qiujuer.genius.ui.widget.SeekBar;
+
 import java.io.IOException;
-import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
 import static com.xana.acg.com.Common.URI.MUSIC;
 
 public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.Presenter>
-    implements MusicPlayerContract.View{
+        implements MusicPlayerContract.View {
 
-    private MediaPlayer mediaPlayer;
-    private Date date;
-    final Object syncObj = new Object();
-    private Animation anim;
-
-//    protected MediaPlayer getMedia(){
-//        if(mediaPlayer==null){
-//            synchronized (this){
-//                if(mediaPlayer==null)
-//                    return mediaPlayer = new MediaPlayer();
-//            }
-//        }
-//        return mediaPlayer;
-//    }
+    private MediaPlayer mp;
 
     @BindView(R.id.sb_bar)
     SeekBar mBar;
@@ -67,14 +58,16 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
     @BindView(R.id.tv_creater)
     TextView mCreator;
 
-    private int curTime = 0;
-    private int duration = 1;
-
     private boolean isPlaying = true;
     private boolean isFavor = false;
 
-    private SearchResult.Song  song;
+    private Music music;
     private String uri;
+
+
+    private Thread task;
+
+    private float maxTime;
 
     @Override
     protected int getLayoutId() {
@@ -83,32 +76,30 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
 
     @Override
     protected boolean initArgs(Bundle bundle) {
-        String json = bundle.getString("song");
-        if(json==null||json.length()==0)
+        String json = bundle.getString("music");
+        if (json == null || json.length() == 0)
             return false;
-        song = Factory.getGson().fromJson(json, SearchResult.Song.class);
-        return song !=null;
+        music = Factory.getGson().fromJson(json, Music.class);
+        return music != null;
     }
 
     @Override
     protected void initWidget() {
         super.initWidget();
-        mediaPlayer = new MediaPlayer();
-        date = new Date();
+        mp = App.getMediaPlayer();
+        mp.reset();
     }
 
     @Override
     protected void initData() {
         super.initData();
-        Log.e("songSrc",song.toString());
+        uri = String.format(MUSIC, music.getId());
+        mDisk.setSrc(music.getAl().getPicUrl());
 
-        uri = String.format(MUSIC, song.getId());
-        mDisk.setSrc(song.getAl().getPicUrl());
-
-        mTitle.setText(song.getName());
-        mTip.setText(song.getAlia().size()>0? song.getAlia().get(0): "");
+        mTitle.setText(music.getName());
+        mTip.setText(music.getAlia().size() > 0 ? music.getAlia().get(0) : "");
         StringBuilder creaters = new StringBuilder();
-        for (SearchResult.Song.Ar ar : song.getAr()) {
+        for (Music.Ar ar : music.getAr()) {
             creaters.append(ar.getName()).append(" ");
         }
         mCreator.setText(creaters.toString());
@@ -121,65 +112,62 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                double rate = seekBar.getProgress() / 100.0;
-                int duration = mediaPlayer.getDuration();
-                curTime = (int) (duration * rate);
-                mediaPlayer.seekTo(curTime);
+                mp.seekTo(seekBar.getProgress()*1000);
             }
         });
     }
 
-
-    private Thread mTaskTime = new Thread() {
+    private class TaskHandler extends Handler{
         @Override
-        public void run() {
-
-            synchronized (syncObj) {
-                while (curTime < duration) {
-                    curTime += 1000;
-                    if (curTime > duration)
-                        curTime = duration;
-                    double rate = (double) curTime / duration;
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mCurTime.setText(DateFormat.format("mm:ss", new Date(curTime)));
-                            mBar.setProgress((int) (100 * rate));
-                        }
-                    });
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 0:
+                    mCurTime.setText(TextUtils.time(msg.arg1));
+                    mBar.setProgress(msg.arg1/1000);
+                    break;
             }
         }
-    };
+    }
+    private TaskHandler handler = new TaskHandler();
+
+    private class TaskTime extends Thread {
+        @Override
+        public void run() {
+            while (mp !=null&&(mp.getCurrentPosition()) < mp.getDuration()) {
+                try {
+                    if (!mp.isPlaying()) continue;
+                    Message msg = handler.obtainMessage(0, mp.getCurrentPosition(), 0);
+                    handler.sendMessage(msg);
+                    Thread.sleep(1000);
+                } catch (InterruptedException|NullPointerException e) {
+                    e.printStackTrace();
+                    return;
+                }
+            }
+            if (anime != null)
+                anime.pause();
+        }
+    }
+
+
+    private ObjectAnimator anime;
+
     private boolean setPlayer() {
         try {
-
-            mediaPlayer.setDataSource(uri);
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mediaPlayer.prepareAsync();
-
-            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            mp.setDataSource(uri);
+            mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            mp.prepareAsync();
+            mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
-                    duration = mediaPlayer.getDuration();
+                    disable = false;
                     prepare();
-                    mediaPlayer.start();
-                    anim = new RotateAnimation(0f, 360f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                    anim.setRepeatCount(ValueAnimator.INFINITE);
-                    anim.setInterpolator(new LinearInterpolator());
-                    anim.setDuration(10000);
-
-                    mDisk.startAnimation(anim);
+                    MusicPlayerActivity.this.mp.start();
                 }
             });
             return true;
@@ -191,17 +179,27 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
         return false;
     }
 
-
     private void prepare() {
-        date.setTime(duration);
+        maxTime = mp.getDuration() / 1000f;
+        mBar.setMax((int) maxTime);
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mDuration.setText(DateFormat.format("mm:ss", date));
+                mDuration.setText(TextUtils.time((long) (maxTime*1000)));
             }
         });
-        mTaskTime.start();
+
+        anime = ObjectAnimator
+                .ofFloat(mDisk, "rotation", 0.0f, 360.0f)
+                .setDuration(12000);
+        anime.setInterpolator(new LinearInterpolator());
+        anime.setRepeatCount(-1);
+//                    anime.setRepeatMode(ObjectAnimator.RESTART);
+        anime.start();
+        (task = new TaskTime()).start();
     }
+
+    private boolean disable = true;
 
     @OnClick({R.id.iv_favor, R.id.iv_dload, R.id.iv_extra, R.id.iv_comment,
             R.id.iv_detail, R.id.iv_mode, R.id.iv_front, R.id.iv_play,
@@ -236,15 +234,17 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
     }
 
     private void toggle(View view) {
+        if (disable) return;
         ImageView v = (ImageView) view;
         switch (v.getId()) {
             case R.id.iv_play:
+                v.setActivated(isPlaying);
                 if (isPlaying) {
-                    mediaPlayer.pause();
-                    v.setImageResource(R.drawable.ic_play_);
+                    mp.pause();
+                    anime.pause();
                 } else {
-                    mediaPlayer.start();
-                    v.setImageResource(R.drawable.ic_pause_);
+                    mp.start();
+                    anime.resume();
                 }
                 isPlaying = !isPlaying;
                 break;
@@ -262,13 +262,16 @@ public class MusicPlayerActivity extends PresenterActivity<MusicPlayerContract.P
     }
 
     @Override
-    public void onLoad(SongUri songUri) {
+    public void onLoad(MusicUri musicUri) {
         // TODO
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mediaPlayer.release();
+        if (anime != null)
+            anime.end();
+        if(task!=null) task.interrupt();
+        anime = null;
     }
 }

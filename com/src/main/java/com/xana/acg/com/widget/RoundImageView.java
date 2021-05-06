@@ -17,7 +17,7 @@ public class RoundImageView extends AppCompatImageView {
     private float width;
     private float height;
 
-    private Context mCtx;
+    protected Context mCtx;
 
     public RoundImageView(Context context) {
         this(context, null);
@@ -33,7 +33,7 @@ public class RoundImageView extends AppCompatImageView {
         init(context, attrs);
     }
 
-    private int defaultRadius = 0;
+    private int defaultRadius = 20;
     private int radius;
     private int leftTopRadius;
     private int rightTopRadius;
@@ -64,6 +64,10 @@ public class RoundImageView extends AppCompatImageView {
             leftBottomRadius = radius;
         }
         array.recycle();
+    }
+
+    public void setRadius(int r){
+        radius = r;
     }
 
     @Override
@@ -108,8 +112,15 @@ public class RoundImageView extends AppCompatImageView {
 
     public void setSrc(String src){
         Glide.with(mCtx).load(src)
-                .placeholder(R.drawable.bg_ireina)
+                .placeholder(R.drawable.bg_loading)
                 .centerCrop()
+                .into(this);
+    }
+
+    public void setFullSrc(String src){
+        Glide.with(mCtx).load(src)
+                .placeholder(R.drawable.bg_loading)
+                .fitCenter()
                 .into(this);
     }
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="true" android:drawable="@drawable/ic_male"/>
+    <item android:state_activated="false" android:drawable="@drawable/ic_female"/>
+    <item android:state_enabled="false">
+        <color android:color="@color/trans"/>
+    </item>
+</selector>

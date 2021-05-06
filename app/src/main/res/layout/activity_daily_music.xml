@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actis.DailyMusicActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:background="@color/trans"
+        android:paddingTop="@dimen/statusBarSize"
+        android:translationZ="@dimen/len_10"
+        app:title="@string/label_daily_recom"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        tools:targetApi="lollipop" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="229dp"
+            android:background="@drawable/bg_ekidora"
+            app:elevation="0dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_0"
+                android:layout_weight="1"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_sunday"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/len_20"
+                    android:layout_marginStart="@dimen/len_14"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/len_10"
+                    android:layout_marginBottom="@dimen/len_10"
+                    android:text="@string/label_daily_tips"
+                    android:textColor="@color/grey"
+                    android:layout_marginStart="@dimen/len_14"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_40"
+                    android:background="@drawable/shape_title">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/len_14"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/len_20"
+                            android:layout_height="@dimen/len_20"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_play_"
+                            android:tint="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/len_10"
+                            android:text="@string/label_all_to_play"
+                            android:textSize="@dimen/font_14" />
+
+                        <TextView
+                            android:id="@+id/tv_total_music"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_total_music"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/font_13" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/len_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/len_16"
+                            android:layout_height="@dimen/len_16"
+                            android:layout_marginEnd="@dimen/len_2"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_multi_sel_1"
+                            android:tint="@color/black_alpha_160" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_multi_sel"
+                            android:textSize="@dimen/font_13" />
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_alpha_240"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

@@ -35,10 +35,9 @@
                 android:id="@+id/tv_resend"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="@string/label_reverse_second"
-                android:textColor="@color/grey"
-                android:layout_gravity="end|center_vertical"
-                />
+                android:text="@string/label_verify_resend"
+                android:textColor="@drawable/color_resend"
+                android:layout_gravity="end|center_vertical"/>
         </FrameLayout>
     </FrameLayout>
 

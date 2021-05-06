@@ -2,6 +2,7 @@ package com.xana.acg.fac.net;
 
 
 import com.xana.acg.Factory;
+import com.xana.acg.fac.priavte.Account;
 
 import java.io.IOException;
 
@@ -12,10 +13,10 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.xana.acg.com.Common.ACCOUNT.COOKIE;
+import static com.xana.acg.com.Common.HEADER.contentType;
 import static com.xana.acg.com.Common.SEVER.ANIME;
 import static com.xana.acg.com.Common.SEVER.MUSIC;
-import static com.xana.acg.com.Common.SEVER.MY;
+import static com.xana.acg.com.Common.SEVER.SELF;
 
 /**
  * 网络请求封装
@@ -35,7 +36,7 @@ public class Network {
 
     public static Retrofit getRetrofit(String server){
         switch (server){
-            case MY:
+            case SELF:
                 if(instance.retrofit!=null)
                     return instance.retrofit;
                 return getRetrofit(instance.retrofit, server);
@@ -61,14 +62,18 @@ public class Network {
                         Request.Builder builder = req.newBuilder();
 //                        if(!TextUtils.isEmpty(Account.getToken())){
 //                            /* 注入一个token */
-                            builder.addHeader("Cookie", COOKIE);
-//                        }
-                        Request request = builder.addHeader("Content-type", "application/json").build();
 
+                        String cookie = Account.getCookie();
+                        if(Account.getCookie()!=null)
+                            builder.addHeader("Cookie", cookie);
+
+                        builder.addHeader("Content-type", contentType);
+
+//                        }
+                        Request request = builder.build();
                         return chain.proceed(request);
                     }
-                })
-                .build();
+                }).build();
         Retrofit.Builder builder = new Retrofit.Builder();
 
         retrofit =  builder.baseUrl(server)
@@ -79,13 +84,12 @@ public class Network {
         return retrofit;
     }
 
-
     /**
      * 返回一个网络请求代理
      * @return
      */
-    public static RemoteService remote(String server){
-        return Network.getRetrofit(server).create(RemoteService.class);
+    public static Api remote(String server){
+        return Network.getRetrofit(server).create(Api.class);
     }
 
 }

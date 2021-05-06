@@ -40,7 +40,8 @@
             android:background="@null"
             android:textColor="@color/black"
             android:inputType="phone"
-            android:maxLength="11"/>
+            android:maxLength="11"
+            android:textCursorDrawable="@drawable/ic_cursor"/>
 
 
         <ImageView

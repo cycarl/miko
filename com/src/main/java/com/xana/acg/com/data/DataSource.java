@@ -1,7 +1,5 @@
 package com.xana.acg.com.data;
 
-import androidx.annotation.StringRes;
-
 public interface DataSource {
 
     /**
@@ -13,10 +11,10 @@ public interface DataSource {
     }
 
     interface SucceedCallback<T>{
-        void onDataLoaded(T data);
+        void success(T data);
     }
     interface FailedCallback{
-        void onDataNotAvailable(@StringRes int strRes);
+        void fail(String msg);
     }
 
     /**

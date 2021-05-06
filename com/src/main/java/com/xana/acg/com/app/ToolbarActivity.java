@@ -1,8 +1,5 @@
 package com.xana.acg.com.app;
 
-
-import android.view.View;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 
@@ -37,5 +34,4 @@ public abstract class ToolbarActivity extends Activity {
             actionBar.setHomeButtonEnabled(true);
         }
     }
-
 }

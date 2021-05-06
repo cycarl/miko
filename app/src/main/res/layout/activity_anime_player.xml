@@ -6,83 +6,111 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".actis.AnimePlayerActivity">
-    <RelativeLayout
+
+    <FrameLayout
+        android:id="@+id/full"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:paddingEnd="@dimen/statusBarSize"
+        android:visibility="gone" />
+
+    <FrameLayout
         android:id="@+id/display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
+        android:layout_height="@dimen/len_224">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarWithStatusBarSize"
             android:paddingTop="@dimen/statusBarSize"
-            android:translationZ="@dimen/len_10"
-            app:title=" "/>
+            android:translationZ="@dimen/len_2"
+            app:title=" " />
 
-        <io.vov.vitamio.widget.CenterLayout
-            android:id="@+id/dd"
+        <FrameLayout
+            android:id="@+id/player"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/len_224"
-            android:background="@color/colorAccent"
-            android:clickable="true"
-            android:foreground="@drawable/ic_touch_fg"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/black">
 
-            <io.vov.vitamio.widget.VideoView
-                android:id="@+id/vitamio"
+            <com.xana.acg.mikomiko.views.AnimeView
+                android:id="@+id/anime"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"/>
-        </io.vov.vitamio.widget.CenterLayout>
+                android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/buffer_percent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/dd"
-            android:layout_marginStart="12dp"
-            android:textColor="#e6ff01" />
-
-        <TextView
-            android:id="@+id/net_speed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/dd"
-            android:layout_marginStart="12dp"
-            android:layout_toEndOf="@id/buffer_percent"
-            android:textColor="#04fa00" />
-
-    </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/danmaku"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/fl_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/len_40"
-            android:layout_weight="3"
-            app:tabGravity="fill"
-            app:tabIndicator="@null"
-            app:tabSelectedTextColor="@color/colorAccent"
-            app:tabTextColor="@color/black_alpha_112"
-            />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="7"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1px"
+            android:translationZ="1px"
+            android:outlineProvider="bounds"
+            tools:targetApi="lollipop">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="@dimen/len_100"
+                android:layout_height="@dimen/len_32"
+                app:tabIndicatorFullWidth="false"
+                app:tabSelectedTextColor="@color/colorAccent"
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:tabTextColor="@color/black_alpha_112" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_danmaku"
+                    android:layout_width="@dimen/len_200"
+                    android:layout_height="@dimen/len_24"
+                    android:background="@drawable/shape_edit_16"
+                    android:gravity="center_vertical"
+                    android:hint="@string/label_danmaku_send"
+                    android:maxLines="1"
+                    android:padding="@dimen/len_4"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/grey"
+                    android:textCursorDrawable="@drawable/shape_edit_cursor"
+                    android:textSize="@dimen/font_12" />
+
+                <ImageView
+                    android:id="@+id/iv_trigger"
+                    android:layout_width="@dimen/len_32"
+                    android:layout_height="@dimen/len_32"
+                    android:layout_gravity="end|bottom"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_trigger" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
-    <TextView
+    <ViewStub
+        android:id="@+id/viewStub"
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/grey"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        android:layout="@layout/view_recycler" />
 </LinearLayout>

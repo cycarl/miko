@@ -1,56 +1,90 @@
 package com.xana.acg.mikomiko.actis;
 
-import android.net.Uri;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewStub;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
-import com.xana.acg.com.app.Fragment;
-import com.xana.acg.com.app.ToolbarActivity;
-import com.xana.acg.fac.model.anime.Detail;
+import com.xana.acg.com.widget.recycler.RecyclerAdapter;
+import com.xana.acg.fac.model.anime.IptvUri;
+import com.xana.acg.fac.presenter.IView;
+import com.xana.acg.fac.presenter.music.UriPresenter;
+import com.xana.acg.mikomiko.App;
+import com.xana.acg.com.app.TabViewPagerActivity;
+import com.xana.acg.com.widget.IVideoView;
 import com.xana.acg.mikomiko.R;
-import com.xana.acg.mikomiko.adaps.FSAdapter;
-import com.xana.acg.mikomiko.frags.BlankFragment;
-import com.xana.acg.mikomiko.frags.DetailFragment;
+import com.xana.acg.mikomiko.frags.SrcFragment;
+import com.xana.acg.mikomiko.frags.comment.CommentFragment;
+import com.xana.acg.mikomiko.views.AnimeView;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.SortedSet;
 
 import butterknife.BindView;
-import io.vov.vitamio.MediaPlayer;
-import io.vov.vitamio.Vitamio;
-import io.vov.vitamio.utils.Log;
-import io.vov.vitamio.widget.MediaController;
-import io.vov.vitamio.widget.VideoView;
+import butterknife.OnClick;
+import top.littlefogcat.danmakulib.danmaku.Danmaku;
+import top.littlefogcat.danmakulib.danmaku.DanmakuManager;
 
-public class AnimePlayerActivity extends ToolbarActivity {
+public class AnimePlayerActivity extends TabViewPagerActivity
+        implements IVideoView.Listener, IView<SortedSet<IptvUri>> {
 
-    @BindView(R.id.vp2)
-    ViewPager2 mViewPager;
+    @BindView(R.id.full)
+    FrameLayout mFull;
+    @BindView(R.id.player)
+    FrameLayout mPlayer;
+    @BindView(R.id.display)
+    FrameLayout mDisplay;
+    @BindView(R.id.anime)
+    AnimeView anime;
+    @BindView(R.id.danmaku)
+    FrameLayout danmaku;
+    @BindView(R.id.edit_danmaku)
+    EditText eDanmaku;
 
-    @BindView(R.id.tab)
-    TabLayout mTab;
+    @BindView(R.id.viewStub)
+    ViewStub mView;
+    @BindView(R.id.fl_container)
+    LinearLayout mContain;
+    private OnFragListener mListener;
 
-    @BindView(R.id.vitamio)
-    VideoView videoView;
+    @OnClick(R.id.iv_trigger)
+    void click(View view) {
+        Danmaku danmaku = new Danmaku();
+        danmaku.text = eDanmaku.getText().toString();
+        danmaku.color = "#AFC67EF1";
+        danmaku.size = 42;
+        dm.send(danmaku);
+        eDanmaku.setText("");
+        eDanmaku.clearFocus();
+        App.hintKb(eDanmaku);
+    }
 
-    @BindView(R.id.buffer_percent)
-    TextView percentTv;
-    @BindView(R.id.net_speed)
-    TextView netSpeedTv;
+    private DanmakuManager dm;
 
-    private List<String> mTitle = Arrays.asList("简介", "评论");
+    @Override
+    protected void setFrags() {
 
-    private List<Fragment> mFragments = Arrays.asList(
-            new DetailFragment(),
-            new BlankFragment()
-    );
-    private OnFragLoadListener mListener;
+        mFrags = Arrays.asList(
+                new SrcFragment(),
+                uri==null?
+                new CommentFragment():
+                new CommentFragment(uri.substring(uri.lastIndexOf('/')+1)));
+
+    }
+
+    @Override
+    protected void setTitles() {
+        mTitles = Arrays.asList("简介", "评论");
+    }
 
     @Override
     protected int getLayoutId() {
@@ -61,100 +95,198 @@ public class AnimePlayerActivity extends ToolbarActivity {
 
     @Override
     protected boolean initArgs(Bundle bundle) {
+        App.getMediaPlayer().pause();
         uri = bundle.getString("uri");
-        return uri != null;
+        return true;
     }
 
     @Override
     protected void initWidget() {
         super.initWidget();
-        setTab();
-        mListener = (OnFragLoadListener) mFragments.get(mViewPager.getCurrentItem());
-        mListener.onLoad(uri);
-        setPlayer();
+        anime.initData();
+        anime.setListener(this);
+        dm = DanmakuManager.getInstance();
+        dm.init(this, danmaku);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (uri != null)
+            anime.resume();
     }
 
     String url = "https://1251316161.vod2.myqcloud.com/29fe1275vodbj1251316161/5c1534725285890816229305794/EsvrHBrCk7kA.mp4";
     String url1 = "https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/91a28fd65285890814081538994/N0P7oujHVwYA.mp4";
-    String url2 = "http://60.205.204.182:6001/anime/6b313038307c3537393633/0/0/url";
-    String url3 = "http://60.205.204.182:6001/proxy/anime/6b313038307c3537393633/0/0";
+    String url2 = "http://112.74.191.65:3001/anime/6b313038307c3537393633/0/0/url";
+    String url3 = "http://112.74.191.65:3001/proxy/anime/6b313038307c3537393633/0/0";
 
-    private void setPlayer() {
-        //显示缓冲百分比的TextView
-        //显示下载网速的TextView
-        //初始化加载库文件
-        if (Vitamio.isInitialized(this)) {
-            videoView = findViewById(R.id.vitamio);
-            videoView.setVideoQuality(MediaPlayer.VIDEOQUALITY_HIGH);
-            MediaController controller = new MediaController(this);
-            videoView.setMediaController(controller);
-            videoView.setBufferSize(10240); //设置视频缓冲大小。默认1024KB，单位byte
-            videoView.requestFocus();
-
-            videoView.setOnBufferingUpdateListener(new MediaPlayer.OnBufferingUpdateListener() {
-                @Override
-                public void onBufferingUpdate(MediaPlayer mp, int percent) {
-                    percentTv.setText("已缓冲：" + percent + "%");
-                }
-            });
-            videoView.setOnInfoListener(new MediaPlayer.OnInfoListener() {
-                @Override
-                public boolean onInfo(MediaPlayer mp, int what, int extra) {
-                    switch (what) {
-                        //开始缓冲
-                        case MediaPlayer.MEDIA_INFO_BUFFERING_START:
-                            percentTv.setVisibility(View.VISIBLE);
-                            netSpeedTv.setVisibility(View.VISIBLE);
-                            mp.pause();
-                            break;
-                        //缓冲结束
-                        case MediaPlayer.MEDIA_INFO_BUFFERING_END:
-                            percentTv.setVisibility(View.GONE);
-                            netSpeedTv.setVisibility(View.GONE);
-                            mp.start(); //缓冲结束再播放
-                            break;
-                        //正在缓冲
-                        case MediaPlayer.MEDIA_INFO_DOWNLOAD_RATE_CHANGED:
-                            netSpeedTv.setText("当前网速:" + extra + "kb/s");
-                            break;
-                    }
-                    return true;
-                }
-            });
+    @Override
+    protected void initData() {
+        super.initData();
+        if(uri==null){
+            setIptv();
+        }else {
+            mListener = (OnFragListener) mFrags.get(mVp2.getCurrentItem());
+            mListener.onLoad(uri);
         }
     }
 
-    private void setTab() {
-        FSAdapter fsAdapter = new FSAdapter(getSupportFragmentManager(), getLifecycle(), mFragments);
-        mViewPager.setAdapter(fsAdapter);
-        new TabLayoutMediator(mTab, mViewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+    UriPresenter<SortedSet<IptvUri>> uriPre;
+    RecyclerView mRecycler;
+    SrcAapter srcAapter;
+    private void setIptv() {
+        anime.setLive(true);
+        mContain.removeAllViews();
+        mContain.setVisibility(View.GONE);
+        mView.inflate();
+        mRecycler = findViewById(R.id.recycler);
+        uriPre = new UriPresenter<>(this);
+        uriPre.getIptvUri();
+        mRecycler.setLayoutManager(new GridLayoutManager(this, 2));
+        mRecycler.setAdapter(srcAapter = new SrcAapter());
+        srcAapter.setListener(new RecyclerAdapter.AdapterListenerImpl<IptvUri>() {
             @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int index) {
-                tab.setText(mTitle.get(index));
-            }
-        }).attach();
-    }
-
-
-    private String animeUri;
-
-    public void setUri(String uri) {
-        animeUri = uri;
-        Log.e("MyUri", uri);
-        videoView.setVideoURI(Uri.parse(animeUri));
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                // optional need Vitamio 4.0
-                mediaPlayer.setPlaybackSpeed(1.0f);
-                //mediaPlayer.setLooping(true);
+            public void onItemClick(RecyclerAdapter.ViewHolder holder, IptvUri iptvUri) {
+                SrcHolder hd = (SrcHolder) holder;
+                SrcHolder cur = SrcHolder.cur;
+                if(cur!=null)
+                    cur.mTitle.setActivated(false);
+                hd.mTitle.setActivated(true);
+                cur = hd;
+                setUri(iptvUri.getUrl());
             }
         });
     }
 
-    public interface OnFragLoadListener {
-        void onLoad(String uri);
+    public void setUri(String uri) {
+//        uri = "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8";
+        anime.play(uri);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            anime.switchScreen();
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    public void fullScreen() {
+        ViewGroup parent = (ViewGroup) mPlayer.getParent();
+        parent.removeAllViews();
+        parent.setVisibility(View.GONE);
+
+        int mHideFlags =
+                View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+
+        mFull.setSystemUiVisibility(mHideFlags);
+        mFull.removeAllViews();
+        mFull.addView(mPlayer);
+        mFull.setVisibility(View.VISIBLE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    }
+
+    @Override
+    public void norScreen() {
+        ViewGroup parent = (ViewGroup) mPlayer.getParent();
+        parent.removeAllViews();
+        parent.setVisibility(View.GONE);
+        mDisplay.removeAllViews();
+        mDisplay.addView(mPlayer);
+        mDisplay.setVisibility(View.VISIBLE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    @Override
+    public void complete() {
+        mListener.next();
+    }
+
+    @Override
+    public void next() {
+        mListener.next();
+    }
+
+
+    // iptv loaded
+    @Override
+    public void onLoad(SortedSet<IptvUri> res) {
+        Log.e("iptv", res.toString());
+        srcAapter.add(res);
+        setUri(res.first().getUrl());
+    }
+    // iptv failed
+    @Override
+    public void onFail(String msg) {
+
+    }
+
+    public interface OnFragListener {
+        void onLoad(String uri);
+
+        void next();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        anime.save();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(uriPre!=null)
+            uriPre.destory();
+        uriPre = null;
+    }
+
+    public interface MediaPlayerControl {
+        void start();
+
+        void pause();
+
+        long getDuration();
+
+        long getCurrentPosition();
+
+        void seekTo(long msec);
+
+        boolean isPlaying();
+
+        int getBufferPercentage();
+    }
+
+    static class SrcAapter extends RecyclerAdapter<IptvUri> {
+        @Override
+        protected int getItemViewType(int p, IptvUri iptvUri) {
+            return p % 2 == 0 ? R.layout.item_episode_left : R.layout.item_episode_right;
+        }
+        @Override
+        protected ViewHolder<IptvUri> onCreateViewHolder(View root, int viewType) {
+            return new AnimePlayerActivity.SrcHolder(root);
+        }
+    }
+    static class SrcHolder extends RecyclerAdapter.ViewHolder<IptvUri> {
+
+        public static SrcHolder cur;
+
+        @BindView(R.id.tv_title)
+        TextView mTitle;
+        public SrcHolder(View itemView) {
+            super(itemView);
+        }
+        @Override
+        protected void onBind(IptvUri iptvUri) {
+            mTitle.setText(iptvUri.getName());
+        }
+    }
 }
 

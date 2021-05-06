@@ -6,6 +6,6 @@
         <item name="android:elevation">0dp</item>
         <item name="android:outlineProvider">none</item>
         <!--底部导航栏颜色-->
-        <item name="android:navigationBarColor">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/trans</item>
     </style>
 </resources>

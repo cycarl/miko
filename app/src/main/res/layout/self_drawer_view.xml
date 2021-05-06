@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_drawer">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="@dimen/len_44">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/self_drawer_user"/>
+            <com.xana.acg.com.widget.recycler.Recycler
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/recycler"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_44"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        tools:targetApi="lollipop">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white_alpha_48"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:src="@drawable/ic_drawer_night_mode" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:text="@string/label_drawer_night_mode"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:src="@drawable/ic_drawer_setting" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_6"
+                android:text="@string/label_drawer_setting"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/len_20"
+                android:layout_height="@dimen/len_20"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_drawer_exit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_4"
+                android:text="@string/label_drawer_exit"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

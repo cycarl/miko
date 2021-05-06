@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarWithStatusBarSize"
             android:gravity="center_vertical"
@@ -25,16 +24,16 @@
                 android:id="@+id/iv_menu"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
-                android:src="@drawable/ic_menu"
-                android:contentDescription="@string/app_name" />
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_menu" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginStart="@dimen/len_20"
                 android:layout_marginEnd="@dimen/len_20"
+                android:layout_weight="1"
                 app:tabIndicatorHeight="@dimen/len_0"
                 app:tabSelectedTextColor="@color/black"
                 app:tabTextAppearance="@style/TL0"
@@ -44,30 +43,30 @@
                 android:id="@+id/iv_search"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
+                android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_search"
-                android:tint="@color/colorIcon"
-                android:contentDescription="@string/app_name" />
+                android:tint="@color/colorIcon" />
 
         </LinearLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
-
-            android:id="@+id/vp2"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refresh"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 
-
     <!--    android:layout_gravity="start"-->
-
-    <RelativeLayout
-
+    <include
+        layout="@layout/self_drawer_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@drawable/bg_roku" />
-
+        android:layout_gravity="start" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

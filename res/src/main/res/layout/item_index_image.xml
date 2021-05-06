@@ -15,6 +15,6 @@
         android:adjustViewBounds="true"
         android:foreground="@drawable/ic_touch_fg"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_ireina"
+        android:src="@drawable/bg_loading"
         app:radius="@dimen/len_4" />
 </LinearLayout>

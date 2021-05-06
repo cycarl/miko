@@ -1,12 +1,4 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:width="24dp"
-    android:height="24dp"
-    android:tint="@color/navIconTintLight"
-    android:viewportHeight="24.0"
-    android:viewportWidth="24.0"
-    tools:ignore="VectorRaster">
-    <path
-        android:fillColor="#FF000000"
-        android:pathData="M20,11H7.83l5.59,-5.59L12,4l-8,8 8,8 1.41,-1.41L7.83,13H20v-2z" />
+<vector android:height="28dp" android:viewportHeight="1024"
+    android:viewportWidth="1024" android:width="28dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/navIconTintLight" android:pathData="M224,480h640q14.02,0 23.01,8.99T896,512t-8.99,23.01T864,544L224,544q-14.02,0 -23.01,-8.99T192,512t8.99,-23.01T224,480zM236.99,512l266.02,264.99Q512,787.01 512,800t-9.5,22.5T480,832t-23.01,-8.99l-288,-288Q160,524.99 160,512t8.99,-23.01l288,-288Q467.01,192 480,192t22.5,9.5T512,224t-8.99,23.01z"/>
 </vector>

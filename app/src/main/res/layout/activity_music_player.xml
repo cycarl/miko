@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_play"
-    tools:context=".actis.MusicPlayerActivity">
+    tools:context=".actis.MusicPlayerActivity"
+    android:id="@+id/container">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -54,9 +55,10 @@
         android:layout_width="@dimen/len_278"
         android:layout_height="@dimen/len_278"
         android:padding="@dimen/len_46"
-        android:src="@drawable/bg_ireina"
+        android:src="@drawable/bg_error"
         android:scaleType="centerCrop"
         android:background="@drawable/bg_disk"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -203,7 +205,5 @@
                 android:tint="@color/white"
                 android:contentDescription="@string/app_name" />
         </LinearLayout>
-
-
     </LinearLayout>
 </FrameLayout>

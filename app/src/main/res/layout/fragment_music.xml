@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frags.MusicFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".frags.MusicFragment"
+    android:id="@+id/ns_page">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <!--    轮播图-->
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_172"
+            app:is_auto_play="true"
+            app:image_scale_type="center_crop"
+            android:layout_marginStart="@dimen/len_14"
+            android:layout_marginEnd="@dimen/len_14"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,15 +34,15 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:gravity="center">
-                <com.xana.acg.com.widget.PortraitView
-                    android:id="@+id/pv_recom"
+                <ImageView
+                    android:id="@+id/iv_recom"
                     android:layout_width="@dimen/len_44"
                     android:layout_height="@dimen/len_44"
                     android:background="@drawable/ic_bg_img"
                     android:src="@drawable/ic_frag_recom"
-                    android:foreground="@drawable/ic_touch_fg"
                     android:padding="@dimen/len_10"
-                    android:tint="@color/white" />
+                    android:tint="@color/white"
+                    android:contentDescription="@string/app_name" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,15 +57,15 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:gravity="center">
-                <com.xana.acg.com.widget.PortraitView
-                    android:id="@+id/pv_song_list"
-                    android:foreground="@drawable/ic_touch_fg"
+                <ImageView
+                    android:id="@+id/iv_music_list"
                     android:layout_width="@dimen/len_44"
                     android:layout_height="@dimen/len_44"
                     android:background="@drawable/ic_bg_img"
                     android:src="@drawable/ic_frag_list"
                     android:padding="@dimen/len_10"
-                    android:tint="@color/white"/>
+                    android:tint="@color/white"
+                    android:contentDescription="@string/app_name" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -139,7 +150,8 @@
             android:background="@drawable/shape_border"/>
 
         <FrameLayout
-            android:padding="@dimen/len_10"
+            android:paddingStart="@dimen/len_10"
+            android:paddingEnd="@dimen/len_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
@@ -149,6 +161,7 @@
                 android:textColor="@color/black"
                 android:text="@string/label_song_recom"/>
             <TextView
+                android:id="@+id/tv_music_list"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/len_24"
                 android:gravity="center"
@@ -158,15 +171,17 @@
                 android:textSize="@dimen/font_12"
                 android:layout_gravity="end"
                 android:background="@drawable/shape_border"
-                android:text="@string/label_more" />
+                android:text="@string/label_more_song_list" />
         </FrameLayout>
         <androidx.recyclerview.widget.RecyclerView
+            android:padding="@dimen/len_10"
             android:id="@+id/rv_song_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <FrameLayout
-            android:padding="@dimen/len_10"
+            android:paddingStart="@dimen/len_10"
+            android:paddingEnd="@dimen/len_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
@@ -176,6 +191,7 @@
                 android:textColor="@color/black"
                 android:text="@string/label_song_new"/>
             <TextView
+                android:id="@+id/tv_new_music"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/len_24"
                 android:gravity="center"
@@ -185,9 +201,10 @@
                 android:textSize="@dimen/font_12"
                 android:layout_gravity="end"
                 android:background="@drawable/shape_border"
-                android:text="@string/label_more" />
+                android:text="@string/label_more_song_new" />
         </FrameLayout>
         <androidx.recyclerview.widget.RecyclerView
+            android:padding="@dimen/len_10"
             android:id="@+id/rv_new_song"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -204,23 +221,28 @@
                 android:textColor="@color/black"
                 android:text="@string/label_elite"/>
 
-            <ImageView
-                android:layout_width="@dimen/len_12"
-                android:layout_height="@dimen/len_12"
-                android:src="@drawable/ic_refresh"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="@dimen/len_64"/>
-            <TextView
-                android:id="@+id/tv_get"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/len_24"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_12"
-                android:layout_gravity="end"
-                android:text="@string/label_get_new" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|end"
+                android:gravity="center_vertical"
+                android:id="@+id/ll_refresh">
+                <ImageView
+                    android:layout_width="@dimen/len_12"
+                    android:layout_height="@dimen/len_12"
+                    android:src="@drawable/ic_refresh"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/len_24"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_12"
+                    android:text="@string/label_get_new" />
+            </LinearLayout>
+
         </FrameLayout>
-        <com.xana.acg.com.widget.recycler.Recycler
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_elite"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

@@ -225,6 +225,7 @@ public class MediaController extends FrameLayout {
       mWindow.setContentView(mRoot);
       mWindow.setWidth(LayoutParams.MATCH_PARENT);
       mWindow.setHeight(LayoutParams.WRAP_CONTENT);
+
     }
     initControllerView(mRoot);
   }
@@ -341,7 +342,7 @@ public class MediaController extends FrameLayout {
 
         mWindow.setAnimationStyle(mAnimStyle);
         setWindowLayoutType();
-        mWindow.showAtLocation(mAnchor, Gravity.NO_GRAVITY, anchorRect.left, anchorRect.bottom);
+        mWindow.showAtLocation(mAnchor, Gravity.BOTTOM, anchorRect.left, anchorRect.bottom);
       }
       mShowing = true;
       if (mShownListener != null)

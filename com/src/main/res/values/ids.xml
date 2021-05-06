@@ -2,6 +2,8 @@
 <resources>
     <!--Toolbar的默认id名 -->
     <item name="toolbar" type="id" />
+    <item name="vp2" type="id" />
+    <item name="tab" type="id" />
     <!--recycler封装的tag属性-->
     <item name="tag_recycler_holder" type="id"/>
     <!--默认头像的drawable的名字-->

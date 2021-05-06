@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".actis.MusicListMallActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/statusBarSize"
+        app:title="@string/label_more_song_list"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:titleTextColor="@color/black"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/len_4"
+        tools:ignore="RtlSymmetry">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_32"
+            app:tabTextColor="@color/black_alpha_160"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:tabMode="scrollable"
+            android:layout_marginEnd="@dimen/len_32"/>
+        <ImageView
+            android:layout_width="@dimen/len_32"
+            android:layout_height="@dimen/len_32"
+            android:src="@drawable/ic_menu_1"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="end|center_vertical"
+            android:padding="@dimen/len_5"
+            android:foreground="@drawable/ic_touch_fg_btn"
+            android:clickable="true"/>
+    </FrameLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

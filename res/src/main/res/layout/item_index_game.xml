@@ -6,7 +6,7 @@
     android:layout_marginBottom="@dimen/len_6"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="@dimen/len_10">
+    android:padding="@dimen/len_14">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
             android:contentDescription="@string/app_name"
             android:foreground="@drawable/ic_touch_fg"
             android:scaleType="fitXY"
-            android:src="@drawable/bg_ireina"
+            android:src="@drawable/bg_loading"
             app:radius="@dimen/len_8" />
 
 

@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.appcompat:appcompat:${appcompatVersion}"
     implementation "androidx.legacy:legacy-support-v4:${supportv4Version}"
@@ -43,12 +44,11 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:${viewPager2Version}"
 
     implementation "com.github.bumptech.glide:glide:$glideVersion"
-
     implementation "net.qiujuer.genius:kit-handler:$geniusVersion"
 
+    implementation 'com.youth.banner:banner:1.4.9'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 }

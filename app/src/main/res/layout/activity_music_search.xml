@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actis.MusicSearchActivity"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/statusBarSize"
+        app:title="@string/title_search"
+        app:titleTextColor="@color/grey"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/font_38"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/grey"
+        app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        app:tabMode="scrollable"
+        app:tabIndicatorFullWidth="false"
+        android:paddingStart="@dimen/len_14"
+        android:paddingEnd="@dimen/len_14" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

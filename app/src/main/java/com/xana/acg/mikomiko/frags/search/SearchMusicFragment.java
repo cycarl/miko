@@ -9,7 +9,7 @@ import com.xana.acg.com.app.PresenterFragment;
 import com.xana.acg.com.widget.RoundImageView;
 import com.xana.acg.com.widget.recycler.Recycler;
 import com.xana.acg.com.widget.recycler.RecyclerAdapter;
-import com.xana.acg.fac.model.music.SearchResult;
+import com.xana.acg.fac.model.music.Music;
 import com.xana.acg.fac.presenter.search.SearchContract;
 import com.xana.acg.fac.presenter.search.SearchPresenter;
 import com.xana.acg.mikomiko.R;
@@ -23,15 +23,24 @@ import butterknife.BindView;
 public class SearchMusicFragment extends PresenterFragment<SearchContract.Presenter>
         implements SearchContract.View, SearchActivity.OnSearchListener, Recycler.OnMoreLoadListener {
 
-    @BindView(R.id.rv)
+    @BindView(R.id.recycler)
     Recycler mRv;
 
     private int offset = 0;
     private Adapter mAdapter;
 
+    private String type;
+
+    public SearchMusicFragment(){}
+
+
+    public SearchMusicFragment(String type){
+        this.type = type;
+    }
+
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_search_music;
+        return R.layout.fragment_recycler;
     }
 
     @Override
@@ -40,14 +49,14 @@ public class SearchMusicFragment extends PresenterFragment<SearchContract.Presen
         mRv.setLayoutManager(new LinearLayoutManager(getContext()));
         mRv.setAdapter(mAdapter = new Adapter());
         mRv.setListener(this);
-        mAdapter.setListener(new RecyclerAdapter.AdapterListener<SearchResult.Song>() {
+        mAdapter.setListener(new RecyclerAdapter.AdapterListener<Music>() {
             @Override
-            public void onItemClick(RecyclerAdapter.ViewHolder holder, SearchResult.Song song) {
-                activity().navTo(MusicPlayerActivity.class, "song", Factory.getGson().toJson(song));
+            public void onItemClick(RecyclerAdapter.ViewHolder holder, Music song) {
+                acti().navTo(MusicPlayerActivity.class, "music", Factory.getGson().toJson(song));
             }
 
             @Override
-            public void onItemLongClick(RecyclerAdapter.ViewHolder holder, SearchResult.Song song) {
+            public void onItemLongClick(RecyclerAdapter.ViewHolder holder, Music song) {
 
             }
         });
@@ -60,13 +69,13 @@ public class SearchMusicFragment extends PresenterFragment<SearchContract.Presen
     public void search(String key) {
         this.key = key;
         isSearch = true;
-        mPresenter.search(key, offset);
+        mPresenter.search(key, offset, true);
     }
     @Override
     public void onMoreLoad() {
         if (!hasMore) return;
         isSearch = false;
-        mPresenter.search(key, offset += size);
+        mPresenter.search(key, offset += size, false);
     }
 
     @Override
@@ -78,7 +87,8 @@ public class SearchMusicFragment extends PresenterFragment<SearchContract.Presen
     private int size;
 
     @Override
-    public void onLoad(List<SearchResult.Song> songs, boolean hasMore) {
+    public void onLoad(List<Music> songs, boolean hasMore) {
+        ok(0);
         size = songs.size();
         this.hasMore = hasMore;
         if(isSearch)
@@ -86,39 +96,40 @@ public class SearchMusicFragment extends PresenterFragment<SearchContract.Presen
         else mAdapter.add(songs);
     }
 
-    static class Adapter extends RecyclerAdapter<SearchResult.Song> {
+    static class Adapter extends RecyclerAdapter<Music> {
         @Override
-        protected int getItemViewType(int position, SearchResult.Song song) {
+        protected int getItemViewType(int position, Music song) {
             return R.layout.item_search_music;
         }
 
         @Override
-        protected RecyclerAdapter.ViewHolder<SearchResult.Song> onCreateViewHolder(View root, int viewType) {
-            return new ViewHolder(root);
+        protected RecyclerAdapter.ViewHolder<Music> onCreateViewHolder(View root, int viewType) {
+            return new SearchMusicFragment.ViewHolder(root);
         }
 
-        class ViewHolder extends RecyclerAdapter.ViewHolder<SearchResult.Song> {
+    }
 
-            @BindView(R.id.iv_img)
-            RoundImageView mImg;
-            @BindView(R.id.tv_title)
-            TextView mTitle;
-            @BindView(R.id.tv_creater)
-            TextView mCreater;
-            @BindView(R.id.tv_tip)
-            TextView mTip;
+    public static class ViewHolder extends RecyclerAdapter.ViewHolder<Music> {
 
-            public ViewHolder(View itemView) {
-                super(itemView);
-            }
+        @BindView(R.id.iv_img)
+        RoundImageView mImg;
+        @BindView(R.id.tv_title)
+        TextView mTitle;
+        @BindView(R.id.tv_creater)
+        TextView mCreater;
+        @BindView(R.id.tv_tip)
+        TextView mTip;
 
-            @Override
-            protected void onBind(SearchResult.Song song) {
-                mImg.setSrc(song.getAl().getPicUrl());
-                mTitle.setText(song.getName());
-                mCreater.setText((song.getAr().size() > 0 ? song.getAr().get(0).getName() : "艾米莉亚") + "-" + song.getAl().getName());
-                mTip.setText(song.getAlia().size() > 0 ? song.getAlia().get(0) : "艾米莉亚");
-            }
+        public ViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        @Override
+        protected void onBind(Music song) {
+            mImg.setSrc(song.getAl().getPicUrl());
+            mTitle.setText(song.getName());
+            mCreater.setText((song.getAr().size() > 0 ? song.getAr().get(0).getName() : "艾米莉亚") + "-" + song.getAl().getName());
+            mTip.setText(song.getAlia().size() > 0 ? song.getAlia().get(0) : "艾米莉亚");
         }
     }
 }

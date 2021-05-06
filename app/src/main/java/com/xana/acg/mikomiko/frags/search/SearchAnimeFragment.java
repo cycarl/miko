@@ -7,7 +7,6 @@ import androidx.annotation.LayoutRes;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.xana.acg.com.app.Fragment;
 import com.xana.acg.com.app.PresenterFragment;
 import com.xana.acg.com.widget.RoundImageView;
 import com.xana.acg.com.widget.recycler.RecyclerAdapter;
@@ -23,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 
 public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimePresenter>
-    implements SearchContract.AnimeView, SearchActivity.OnSearchListener, RecyclerAdapter.AdapterListener<Anime> {
+        implements SearchContract.AnimeView, SearchActivity.OnSearchListener, RecyclerAdapter.AdapterListener<Anime> {
 
     @BindView(R.id.rv_left)
     RecyclerView mRvLeft;
@@ -54,6 +53,7 @@ public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimeP
     @Override
     protected void initData() {
         super.initData();
+        search("异世界");
     }
 
     @Override
@@ -68,11 +68,13 @@ public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimeP
 
     @Override
     public void onRightLoad(List<Anime> animes) {
+        ok(0);
         mRightAdapter.replace(animes);
     }
 
     /**
      * 来自Activity数据
+     *
      * @param key
      */
     @Override
@@ -82,7 +84,7 @@ public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimeP
 
     @Override
     public void onItemClick(RecyclerAdapter.ViewHolder holder, Anime anime) {
-        activity().navTo(AnimePlayerActivity.class, "uri", anime.getUrl());
+        acti().navTo(AnimePlayerActivity.class, "uri", anime.getUrl());
     }
 
     @Override
@@ -90,10 +92,13 @@ public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimeP
 
     }
 
-    class Adapter extends RecyclerAdapter<Anime>{
-        private @LayoutRes int viewType;
+    public static class Adapter extends RecyclerAdapter<Anime> {
+        private @LayoutRes
+        int viewType;
 
-        public Adapter( @LayoutRes int itemLayout){
+        public Adapter(){}
+
+        public Adapter(@LayoutRes int itemLayout) {
             viewType = itemLayout;
         }
 
@@ -107,13 +112,14 @@ public class SearchAnimeFragment extends PresenterFragment<SearchContract.AnimeP
             return new ViewHolder(root);
         }
 
-        class ViewHolder extends RecyclerAdapter.ViewHolder<Anime>{
+        static class ViewHolder extends RecyclerAdapter.ViewHolder<Anime> {
 
             @BindView(R.id.iv_img)
             RoundImageView mImg;
 
             @BindView(R.id.tv_title)
             TextView mTitle;
+
             @BindView(R.id.tv_tag)
             TextView mTag;
 

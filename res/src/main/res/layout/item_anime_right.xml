@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/len_5"
+    android:layout_marginStart="@dimen/len_4"
     android:layout_marginTop="@dimen/len_10"
     android:layout_marginEnd="@dimen/len_10"
     android:background="@drawable/bg_item_elite"
@@ -13,11 +13,11 @@
     <com.xana.acg.com.widget.RoundImageView
         android:id="@+id/iv_img"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/len_224"
+        android:layout_height="@dimen/len_256"
         android:adjustViewBounds="true"
         android:foreground="@drawable/ic_touch_fg"
         android:scaleType="fitXY"
-        android:src="@drawable/bg_ireina"
+        android:src="@drawable/bg_loading"
         app:left_top_radius="@dimen/len_6"
         app:right_top_radius="@dimen/len_6" />
 

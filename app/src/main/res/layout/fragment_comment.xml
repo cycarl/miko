@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:id="@+id/ns_page">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.xana.acg.com.widget.recycler.Recycler
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ViewStub
+                android:id="@+id/viewS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/view_no_comment" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        layout="@layout/view_comment_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_44" />
+</LinearLayout>

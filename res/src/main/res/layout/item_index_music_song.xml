@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:padding="5dp">
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -12,11 +12,10 @@
             android:id="@+id/iv_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/bg_ireina"
-            android:scaleType="centerCrop"
+            android:src="@drawable/bg_loading"
+            android:scaleType="fitXY"
             app:radius="@dimen/len_6"
-            android:foreground="@drawable/ic_touch_fg"
-            android:clickable="true"/>
+            android:foreground="@drawable/ic_touch_fg"/>
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,10 +46,10 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/len_28"
         android:layout_marginTop="@dimen/dis_of_text_img"
         android:textColor="@color/black"
-        android:textSize="@dimen/font_10"
+        android:textSize="@dimen/font_12"
         android:ellipsize="end"
         android:text="@string/label_tips"
         android:maxLines="2"/>

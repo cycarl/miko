@@ -11,14 +11,23 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 3、fac模块定义数据Model，封装网络请求工具类，定义Retrofit2代理接口RemoteService,以及各种Presenter的实现类。<br/>
 4、res模块定义各种item布局文件，各种drawable、string、color、dimen资源。是项目主要的资源模块。<br/>
 5、vitamio模块是第三方在线视频播放模块。里面封装了m3u8索引文件的解析器，可以直接播放m3u8包含的流媒体。<br/>
-6、https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko-debug.apk
+
 
 ## 功能截图
 ### 主页
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/5a6520b5937ee8542b1bded6bdea8754529c692d.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/Screenshot_2021-04-18-21-22-43-745_com.xana.acg.m.jpg)
+<center class="half">
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/0.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/1.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/2.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/3.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/4.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/5.jpg" width="200px" />
+</center>
+
+
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/Screenshot_2021-04-18-21-23-20-921_com.xana.acg.m.jpg)
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/Screenshot_2021-04-18-21-24-21-925_com.xana.acg.m.jpg)
+
 
 ### 搜索
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-21-25-06-562_com.xana.acg.m.jpg)
@@ -29,7 +38,7 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 ![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-34-673_com.xana.acg.m.jpg)
 ![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-51-161_com.xana.acg.m.jpg)
 
-### 动漫播放 (darling in the franxx）
+### 动漫播放 (darling in the franxx)
 
 「比翼の鳥」というらしい<br/>
 その鳥は片方の翼しかも立つ、雄と雌、つわいで寄り添わらければ、空を飛べない。不完全の生き物。<br/>

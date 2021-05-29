@@ -8,9 +8,10 @@
 游戏区主要是galgame分享，使用scrapy爬取全网的galgame资源。链接失效正在补链ing。<br>
 
 #### ps: 请使用网易云音乐账号登录miko!   您的star是开发者不竭的动力~~
-<center class="half">
-<img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.png" width="200"/><img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/qq.jpg" alt="联系我QQ" height="200"/>
-</center>
+
+<p class="half">
+   <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.png" width="200"/><img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/qq.jpg" alt="联系我QQ" height="200"/>
+</p>
 
 [扫码或点击下载体验](https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.apk)
 <br/>
@@ -25,52 +26,62 @@
 
 ## 功能截图
 ### 主页
-<center class="half">
+<p class="half">
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/0.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/1.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/2.jpg" width="200px" />
+    </p>
+ <p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/3.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/4.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/5.jpg" width="200px" />
-</center>
+</p>
 
 ### 音乐区
-<center class="half">
+<p class="half">
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/6.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/7.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/8.jpg" width="200px" />
+ </p>
+ <p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/9.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/10.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/11.jpg" width="200px" />
-</center>
+</p>
 ### 动漫区
-<center class="half">
+<p class="half">
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/19.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/20.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/21.jpg" width="200px" />
+    </p>
+ <p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/22.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/27.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/28.jpg" width="200px" />
-</center>
+</p>
 
 ### 搜索
-<center class="half">
+<p class="half">
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/12.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/13.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/14.jpg" width="200px" />
+    </p>
+ <p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/15.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/16.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/17.jpg" width="200px" />
+    </p>
+ <p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/18.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/game/25.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/game/26.jpg" width="200px" />
-</center>
+</p>
 
 ### 彩蛋
-<center>
+<p>
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/more/23.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/more/24.jpg" width="200px" />
-</center>
+</p>
 
 ## 参与贡献
 1.  Fork 本仓库

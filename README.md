@@ -44,7 +44,6 @@
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/10.jpg" width="200px" />
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/11.jpg" width="200px" />
 </center>
-
 ### 动漫区
 <center class="half">
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/19.jpg" width="200px" />

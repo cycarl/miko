@@ -12,6 +12,7 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 4、res模块定义各种item布局文件，各种drawable、string、color、dimen资源。是项目主要的资源模块。<br/>
 5、vitamio模块是第三方在线视频播放模块。里面封装了m3u8索引文件的解析器，可以直接播放m3u8包含的流媒体。<br/>
 
+
 ## 功能截图
 ### 主页
 <center class="half">

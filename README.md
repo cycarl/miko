@@ -1,16 +1,28 @@
-# mikomiko 一款动漫、音乐、美图、galgame于一体的二次元app。
+# miko 集动漫、音乐、美图、galgame于一体的二次元社区app, 白嫖伸手党的福音です。
 
 ## 介绍
-mikomiko是一款二次元手机app，里面集成了网易云api可以在线听歌。使用scrapy增量式爬虫并整合SpringBoot的完成了的动漫区、美图区、galgame区的api，并应用在app中。
-实现了在线看番，壁纸欣赏、galgame分享的功能。ps：点击美图区的浮动按钮会触发隐藏美图，"绅士"们不要错过哦。
+### miko二次元社区，整合动漫、音乐、galgame、美图资源，为您提供最好的看番追剧、听歌体验。
+动漫区可以搜索近乎所有的动漫，使用自定义封装的AnimeView在线看番，动漫区和评论区布局借鉴B站app实现，弹幕功能测试ing。<br>
+音乐区则完全使用了网易云音乐的API, 仿网易云app实现。<br>
+美图区API完善ing，未分类，问就是random浏览本人爬取的几千张setu（笑），实现了长按下载功能，以及一些彩蛋(绅士必看)<br>
+游戏区主要是galgame分享，使用scrapy爬取全网的galgame资源。链接失效正在补链ing。<br>
+
+#### ps: 请使用网易云音乐账号登录miko!   您的star是开发者不竭的动力~~
+<center>
+<img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.png" width="200"/>
+<img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/qq.jpg" alt="联系我QQ" height="200"/>
+</center>
+
+[扫码或点击下载体验](https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.apk)
+<br/>
 
 ## 软件架构
-1、app模块定义各种Activity和Fragment以及相应布局文件, 使用了ButterKnife进行控件绑定。<br/>
-2、com模块定义项目中公用的部分，例如网络请求API、常量，自定义封装RecyclerView, Adapter, 定义实现图片圆角控件RoundImageView, 
-    自定义数据回调接口DataSource.Callback<T> 以及MVP模式基本契约接口。基本Presenter抽象类等。<br/>
-3、fac模块定义数据Model，封装网络请求工具类，定义Retrofit2代理接口RemoteService,以及各种Presenter的实现类。<br/>
-4、res模块定义各种item布局文件，各种drawable、string、color、dimen资源。是项目主要的资源模块。<br/>
-5、vitamio模块是第三方在线视频播放模块。里面封装了m3u8索引文件的解析器，可以直接播放m3u8包含的流媒体。<br/>
+### miko使用标准MVP模式、模块化开发。
+1、app存放Activity和Fragment, 使用ButterKnife进行控件绑定。<br/>
+2、com定义项目中公用的部分。封装网络和数据回调接口以及MVP模式基本契约，<br/>
+   网络请求API、常量，封装RecyclerView, Adapter, 定义个性化控件等。 <br/>
+3、fac定义数据Model，封装网络请求工具类，定义Retrofit2代理,以及Presenter的实现。<br/>
+4、res存放item布局文件，各种drawable、string、color、dimen资源。是主要的资源模块。<br/>
 
 ## 功能截图
 ### 主页
@@ -23,54 +35,44 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
     <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/index/5.jpg" width="200px" />
 </center>
 
+### 音乐区
+<center class="half">
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/6.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/7.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/8.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/9.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/10.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/music/11.jpg" width="200px" />
+</center>
 
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/Screenshot_2021-04-18-21-23-20-921_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/index/Screenshot_2021-04-18-21-24-21-925_com.xana.acg.m.jpg)
-
+### 动漫区
+<center class="half">
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/19.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/20.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/21.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/22.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/27.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/anime/28.jpg" width="200px" />
+</center>
 
 ### 搜索
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-21-25-06-562_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-21-26-02-025_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-21-28-05-182_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-00-41-430_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-00-55-530_com.xana.acg.m.jpg)
-![avatar](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-34-673_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/search/Screenshot_2021-04-18-22-02-51-161_com.xana.acg.m.jpg)
+<center class="half">
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/12.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/13.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/14.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/15.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/16.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/17.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/search/18.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/game/25.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/game/26.jpg" width="200px" />
+</center>
 
-### 动漫播放 (darling in the franxx)
-
-「比翼の鳥」というらしい<br/>
-その鳥は片方の翼しかも立つ、雄と雌、つわいで寄り添わらければ、空を飛べない。不完全の生き物。<br/>
-でも、なぜだろう、わたしはその命のやり方を美しいと思ってしまったのだ。<br/>
-美しいと感じてしまったのだ。<br/>
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-21-59-21-999_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-09-51-068_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-09-55-744_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-10-04-303_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-12-38-239_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-12-40-659_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-13-20-535_com.xana.acg.m.jpg)
-
-やっぱりボクと同じようだ、キミとボクを似ていてね。<br/>
-人間の涙を久しぶり見た、その目を気に入ったよ、ドキドキする。<br/>
-さぁおいで、キミを味あわせて、今からキミがボクのダーリンだ。<br/>
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-02-249_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-36-861_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-14-43-738_com.xana.acg.m.jpg)
-
-なぜだが、涙が出た。傷の痛みのせいじゃない。<br/>
-そうだ、わたしはたぶん嬉しかったのだ、絵本の中の世界みたいな、綺麗なものに<br/>
-きっとこの人とならなれるんだと。<br/>
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-16-49-016_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-18-40-904_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-17-34-810_com.xana.acg.m.jpg)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-22-17-57-463_com.xana.acg.m.jpg)
-
-### 音乐播放 (Re:ゼロから始める異世界生活　Memento)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-21-25-26-833_com.xana.acg.m.jpg)
-
-### 游戏分享 (美少女万華鏡　理と迷宮の少女)
-![avater](https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/mikomiko/play/Screenshot_2021-04-18-21-23-47-468_com.xana.acg.m.jpg)
+### 彩蛋
+<center>
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/more/23.jpg" width="200px" />
+    <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/Screenshoots/miko/more/24.jpg" width="200px" />
+</center>
 
 ## 参与贡献
 1.  Fork 本仓库
@@ -79,5 +81,12 @@ mikomiko是一款二次元手机app，里面集成了网易云api可以在线听
 4.  新建 Pull Request
 
 ## 致谢
+### Binaryify
+NeteaseCloudMusicApi<br>
+网易云音乐 Node.js API service<br>
+[开源地址](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
-
+### zaxtyson
+AnimeSearcher<br>
+整合第三方网站的视频和弹幕资源, 提供最舒适的看番追剧体验<br>
+[开源地址](https://gitee.com/zaxtyson/AnimeSearcher)

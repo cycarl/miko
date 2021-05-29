@@ -8,7 +8,7 @@
 游戏区主要是galgame分享，使用scrapy爬取全网的galgame资源。链接失效正在补链ing。<br>
 
 #### ps: 请使用网易云音乐账号登录miko!   您的star是开发者不竭的动力~~
-<center>
+<center class="half">
 <img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/miko_1.0.2-beta.png" width="200"/><img src="https://mikochat.oss-ap-northeast-1.aliyuncs.com/release/qq.jpg" alt="联系我QQ" height="200"/>
 </center>
 
